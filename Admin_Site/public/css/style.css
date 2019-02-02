@@ -1,0 +1,18 @@
+a{
+    text-decoration: none;
+}
+#product_datatable   td , #product_datatable   th{
+        padding: 0;
+            overflow: auto;
+            word-break: break-all;
+            font-size: 15px;
+            text-align: justify;
+            width: fit-content;
+        }
+
+#product_datatable thead th{
+    min-width: 15em;
+    text-align: center;
+}
+
+

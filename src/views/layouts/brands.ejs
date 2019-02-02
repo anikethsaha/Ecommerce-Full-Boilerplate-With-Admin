@@ -1,0 +1,56 @@
+<style>
+    .brands-area {
+    position: relative;
+    z-index: 1;
+    background-color: #f5f7f9;
+    padding: 100px 5%;
+    justify-content: space-between!important;
+}
+</style>
+
+<div class="brands-area d-flex align-items-center justify-content-between" id="feature_panel">
+        <!-- Brand Logo -->
+
+        <div class="single-brands-logo">
+
+            <h1 class="mid-label">Loading...</h1>
+        </div>
+        <!-- Brand Logo -->
+        <div class="single-brands-logo">
+            <h1 class="mid-label">Loading...</h1>
+        </div>
+        <!-- Brand Logo -->
+        <div class="single-brands-logo">
+            <h1 class="mid-label">Loading...</h1>
+        </div>
+
+        <div class="single-brands-logo">
+            <h1 class="mid-label">Loading...</h1>
+        </div>
+</div>
+<script>
+$.ajax({
+    url:"/show/banners/feature_",
+    type:"get",
+    success : (res) => {
+        var outputString = '';
+        for(let i = 0 ;i<res.length;i++){
+            outputString = outputString + `
+            <div class="single-brands-logo">
+                <img style="
+                    width: 10em;
+                    height: 10em;
+                " src="/images/website-img/${res[i].banner_name_img}" alt="">
+                <h1 style="
+                    font-size: 18px;
+                    color: #5a5a5a;
+                    text-align : center;
+                    text-transform: uppercase;
+                " class="mid-label">${res[i].banner_text}</h1>
+            </div>
+            `;
+        }
+        $('#feature_panel').html(outputString)
+    }
+})
+</script>

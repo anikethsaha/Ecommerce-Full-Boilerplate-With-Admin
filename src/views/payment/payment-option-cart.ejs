@@ -1,0 +1,202 @@
+<% include layouts/header %>
+<style>
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+ .StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  margin: 1em auto;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+.cc-payment-div button{
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    background: #172337;
+    white-space: nowrap;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-decoration: none;
+    -webkit-transition: all 150ms ease;
+    transition: all 150ms ease;
+
+    margin-left: 12px;
+    margin-top: 28px;
+    margin: auto;
+}
+.cc-payment-div button:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
+    background-color: #646567;
+}
+
+</style>
+
+<div class="container-fluid bg-2" >
+    <div class="row center-top">
+      <div class="col-md-6">
+        <div class=" payment-guide">
+          <div class="col-md-12 m-shadow">
+            <span>Simple and Easy Steps</span>
+            <p>Our innovative payment solutions with competitive pricing make payments simpler.</p>
+          </div>
+          <div class="col-md-12 m-shadow">
+            <span>Simple and Easy Steps</span>
+            <p>Our innovative payment solutions with competitive pricing make payments simpler.</p>
+          </div>
+          <div class="col-md-12 m-shadow">
+              <span>Simple and Easy Steps</span>
+              <p>Our innovative payment solutions with competitive pricing make payments simpler.</p>
+            </div>
+        </div>
+      </div>
+        <div class="col-md-6">
+          <div class="col-md-12 ht-5">
+
+          </div>
+          <div class="col-md-12 bg-light-blue p-1">
+          <div class="closeB-wrapper">
+              <a href="#" onclick="cancelOrdering()" data-toggle="tooltip" title="Cancel Ordering" class="closeB"></a>
+
+          </div>
+              <div class="cc-payment-div">
+                    <span id="card-errors">
+
+                    </span>
+                    <button class="m-h-0"  id="rzp-button1">Submit Payment</button>
+              </div>
+
+
+
+
+          </div>
+          <div class="col-md-12">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+    $(window).load(e => {
+
+          setTimeout(function(){
+            window.location.href='/profile'
+          },100000);
+
+
+    })
+</script>
+<script>
+  var shippingCharges = 50;
+  var purchaseCost = "<%= orderDetails.cost %>";
+  if(purchaseCost > 999){
+    shippingCharges = 0
+  }
+var options = {
+    "key": "rzp_test_6FO5DDEuXHA6t7",
+    "amount":  parseInt(parseInt(purchaseCost) + parseInt(shippingCharges) )*100, // 2000 paise = INR 20
+    "name": "Website Name",
+    "description": "Purchase Description",
+    "image": "/images/website-img/logo.png",
+    "handler": function (response){
+        console.log('response from razourpay:', response);
+        $.ajax({
+          url:"/payment/response",
+          data : {
+             response,
+             orderDetails :{
+              delivery_location : "<%= orderDetails.delivery_location %>",
+              _id : "<%= orderDetails._id %>",
+              _userID : "<%= orderDetails._userID._id %>",
+              _cartID : "<%= orderDetails._cartID._id %>",
+              mobileNo : "<%= orderDetails.mobileNo %>",
+              cost : "<%= orderDetails.cost %>",
+              status : "<%= orderDetails.status %>",
+              createdAt : "<%= orderDetails.createdAt %>",
+              updatedAt : "<%= orderDetails.updatedAt %>",
+             }
+          },
+          type:"post",
+          dataType:"text",
+          success : (res)=>{
+            res = JSON.parse(res);
+            const {type,status,paymentId} = res
+            console.log('res :', res);
+            if (res.type == "NON_ERROR" && res.status == "SUCCESS") {
+              window.location.href = "/cart/done/"+paymentId
+            }
+            if(res.type == "ERROR" && res.status == "FAILED"){
+              console.log("PAYMENT FAILED")
+              $('#card-errors').append('<span class="m-rd-alrt">Something is wrong ! Please Call Us @ <a href="tel:00000000">00000001</a> or Mail Us @: <a href="mailto:developer@website.com"> developer@website.com </a></span>');
+            }
+
+
+          }
+      })
+    },
+    "prefill": {
+        "name": "<%= orderDetails._userID.name %>",
+        "email": "<%= orderDetails._userID.email %>",
+        "contact" :"<%= orderDetails._userID.mobile %> "
+    },
+    "theme": {
+        "color": "#2561c1"
+    }
+};
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button1').onclick = function(e){
+  $('#rzp-button1').html('<i class="fa fa-spinner fa-spin" ></i>');
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+
+<script>
+function cancelOrdering(){
+
+  var isCancelOrderConfirmed = confirm("Sure Want To Cancel The Order ?");
+  if(isCancelOrderConfirmed){
+
+      location.replace("/order/cancel/<%= orderDetails._id %>/<%= orderDetails._userID._id %>");
+  }else{
+      console.log("not cancelling")
+      return null;
+  }
+}
+</script>
+
+
+<% include layouts/footer %>

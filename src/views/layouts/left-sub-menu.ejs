@@ -1,0 +1,130 @@
+<style>
+    .left-sub-menu{
+        position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: white;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    top:3em;
+    height: 100%;
+    box-shadow: 0px 0px 22px 6px gainsboro;
+    transform: translateX(-105%);
+    transition: .5s all ease-in-out;
+    z-index: 99;
+}
+.left-sub-menu.slide-rt{
+    transform: translateX(0px);
+    overflow: auto;
+}
+</style>
+
+
+<div class="left-sub-menu">
+        <div class="col-lg-12">
+             <div class="container">
+                 <div class="center-top ">
+
+                        <div class="sub-header-panel col-lg-12"  >
+
+                                <ul class="col-md-2  sub-header-ul">
+                                        </span>
+
+                                        <li class="col-md-12" >
+                                                <a href="/product/book/Art"><span class="" >Art</span> </a>
+                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="col-md-12" >
+                                                <a href="/product/book/Fiction"><span class="" >Fiction</span> </a>
+                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                        </li>
+                                        <li class="col-md-12" >
+                                                        <a href="/product/book/Biography"><span class="" >Biography</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                        </li>
+                                        <li class="col-md-12" >
+                                                        <a href="/product/book/Exam"><span class="" >Exam</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                        </li>
+
+                                </ul>
+                                <ul class="col-md-2  sub-header-ul">
+                                                <li class="col-md-12" >
+                                                                <a href="/product/book/Business"><span class="" >Business</span> </a>
+                                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+                                                <li class="col-md-12" >
+                                                        <a href="/product/book/NonFiction"><span class="" >Non - Fiction</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+                                                <li class="col-md-12" >
+                                                        <a href="/product/book/Children"><span class="" >Children</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+
+                                </ul>
+                                <ul class="col-md-2  sub-header-ul">
+                                                <li class="col-md-12" >
+                                                        <a href="/product/book/Horror"><span class="" >Horror</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+                                                <li class="col-md-12" >
+                                                        <a href="/product/book/Comics"><span class="" >Comics</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+                                                <li class="col-md-12" >
+                                                        <a href="/product/book/Romance"><span class="" >Romance</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+                                                <li class="col-md-12" >
+                                                        <a href="/product/book/Poetry"><span class="" >Poetry</span> </a>
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                                </li>
+
+                                </ul>
+
+                                <ul class="col-md-3 sub-header-img-holder" >
+                                  <img id="sidePanel_1" src="" alt="" srcset="">
+                                  <img id="sidePanel_2" src="" alt="" srcset="">
+
+                                </ul>
+                                <ul class="col-md-3 sub-header-img-holder" id="sidePanel_2">
+                                        <img id="sidePanel_3" src="" alt="" srcset="">
+                                        <img id="sidePanel_0" src="" alt="" srcset="">
+                                        <a href="/product/book">
+                                                <span class="col-md-12 m-half-auto" style="text-align: end;">Show All <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </a>
+                                </ul>
+
+                              </div>
+
+                 </div>
+             </div>
+
+
+        </div>
+</div>
+<script>
+$.ajax({
+        url:"/show/banners/SidePanel",
+        type:"get",
+        success : (res) => {
+
+                for (let i =0;i<res.length;i++){
+
+                $(`#sidePanel_${i}`).attr('src',`/images/website-img/${res[i].banner_name_img}`)
+                }
+        }
+})
+</script>

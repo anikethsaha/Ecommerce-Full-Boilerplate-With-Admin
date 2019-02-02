@@ -1,0 +1,39 @@
+<% include header %>
+<div class="w-5/6 m-auto my-4">
+  <form
+  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+  method="post"
+  action="/edit/delivery/<%= deliveryDetails._id %>"
+  >
+<div class="mb-4">
+
+    <div class="mb-4">
+        <label class="block text-grey-darker text-xl font-bold mb-2">
+            Change Status
+        </label>
+        <select
+        required
+        name="deliveryStatus"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        type="text"
+        >
+            <option value="" >Please Select Status : PRESENT : <%= deliveryDetails.delivery_status %> </option>
+            <option value="DELIVERED">Delivered</option>
+            <option value="SHIPPING">Shipping</option>
+            <option value="DELIVERY_FAILED">Delivery Fail</option>
+            <option value="CANCELLED">Cancel</option>
+
+        </select>
+    </div>
+
+
+    <div class="flex items-center justify-between rounded">
+      <button type="submit" class=" bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded" type="button">
+       Edit
+      </button>
+
+    </div>
+  </form>
+
+
+  <% include footer %>

@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login | TastyMeal</title>
+    <link rel="stylesheet" href="{{ asset ('css/bootstrap.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset ('css/animate.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset ('css/font-awesome.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset ('css/font.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset ('css/app.css') }}" type="text/css" />
+    <style type="text/css">
+        html{
+            margin: 0;
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            height: 100%;
+            background-image: url("/images/food.jpg");
+              background-size: cover;
+              background-position: center;
+        }
+        .aside-xxl{
+            
+        }
+    </style>
+</head>
+<body >
+<section id="content" class=" wrapper-md animated fadeInUp">
+    <div class="container aside-xxl">
+        <a class="text-center block" href="index.html" style="color: black; font-weight: 200; font-size: 40px; margin-top: 20px;line-height: 1.0;" data-toggle="fullscreen">TASTYMEAL ADMIN <br></a>
+        <section class="panel panel-default bg-white m-t-lg">
+            <header class="panel-heading text-center">
+                <strong>Welcome to Tastymeal Admin Login</strong>
+            </header>
+
+            {!! Form::open(array('route' => 'admin.login.submit','class' => 'panel-body wrapper-lg')) !!}
+
+            @if($errors)
+                @foreach ($errors->all() as $message)
+                    <div class="alert alert-danger alert-dismissible fade in">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Error!</strong> {{ $message }}
+                    </div>
+                @endforeach
+            @endif
+
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                {!! Form::email('email','',[ 'placeholder'=>"test@example.com", 'class'=>"form-control input-lg"]) !!}
+            </div>
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                {!! Form::password('password',[ 'placeholder'=>"password", 'class'=>"form-control input-lg"]) !!}
+            </div>
+            {!! Form::submit('Sign in',[ 'class'=>"btn btn-primary"]) !!}
+            {!! Form::close() !!}
+        </section>
+    </div>
+</section>
+<!-- footer -->
+<footer id="footer">
+    <div class="text-center padder">
+        <p>
+            <small>Tastymeal</small>
+        </p>
+    </div>
+</footer>
+<!-- / footer -->
+
+<script src="{{ asset ('js/jquery.min.js') }}"></script>
+<!-- Bootstrap -->
+<script src="{{ asset ('js/bootstrap.js') }}"></script>
+<!-- App -->
+<script src="{{ asset ('js/app.js') }}"></script>
+<script src="{{ asset ('js/app.plugin.js') }}"></script>
+<script src="{{ asset ('js/slimscroll/jquery.slimscroll.min.js') }}"></script>
+
+</body>
+</html>

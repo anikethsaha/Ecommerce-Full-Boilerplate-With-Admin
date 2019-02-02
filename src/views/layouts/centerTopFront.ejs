@@ -1,0 +1,116 @@
+<style>
+.carousel-inner{
+    height: 22em;
+    width: 100%;
+}
+.carousel-inner div,.carousel-inner div img{
+    height: 100%;
+    width: 100%
+}
+.carousel-mover-handler{
+    position: absolute;
+    top: 40%;
+    z-index: 99;
+    width: 2em;
+}
+
+.carousel-mover-handler.left{
+    left: 12%;
+}
+.carousel-mover-handler.right{
+    right: 12%;
+}
+.pv-0{
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+}
+.ph-0{
+   padding-left: 0!important;
+   padding-right: 0!important;
+}
+.p-0-h3{
+    padding: 0 3em;
+}
+</style>
+
+<div  class="col-md-12 ">
+    <div class="center-top">
+        <div class="container-fluid ph-0">
+            <div class="col-md-12 p-0-h3">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="banner_placeholder">
+
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+
+          </div>
+    </div>
+
+</div>
+
+
+<script>
+$.ajax({
+    url:"/show/banners/img_slider",
+    type:"get",
+    success : (res) => {
+
+        $('#myCarousel').html(`
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="${res[0].banner_name_link}"><img src="images/website-img/${res[0].banner_name_img}" alt="Los Angeles"></a>
+          </div>
+
+          <div class="item">
+            <a href="${res[1].banner_name_link}"><img src="images/website-img/${res[1].banner_name_img}" alt="Chicago"></a>
+          </div>
+
+          <div class="item">
+            <a href="${res[2].banner_name_link}"><img src="images/website-img/${res[2].banner_name_img}" alt="Chicago"></a>
+          </div>
+
+          <div class="item">
+            <a href="${res[3].banner_name_link}"><img src="images/website-img/${res[3].banner_name_img}" alt="New York"></a>
+          </div>
+
+          <div class="item">
+            <a href="${res[4].banner_name_link}"><img src="images/website-img/${res[4].banner_name_img}" alt="Chicago"></a>
+          </div>
+
+          <div class="item">
+            <a href="${res[5].banner_name_link}"><img src="images/website-img/${res[5].banner_name_img}" alt="New York"></a>
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <img class="carousel-mover-handler left" src="images/icon/icons8-back-64.png" />
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <img class="carousel-mover-handler right"  src="images/icon/icons8-next-page-80.png" />
+        </a>
+        `)
+    }
+})
+
+
+
+</script>

@@ -1,0 +1,22 @@
+<% include header %>
+
+
+<div class="container">
+<div class="align-center">
+    <h1 class="text-center p-4 m-4 text-4xl text-grey-darker"><%= status %></h1>
+    <% if(typeof err !== undefined || err){ %>
+        <% for (const key in err) {%>
+                <div class="w-full text-center">
+                <%    if (err.hasOwnProperty(key)) {%>
+                     <%   const element = err[key];%>
+                        <span class=" w-full text-md text-red-dark"><%= err[key] %></span>
+                   <% }%>
+               <% }%>
+               </div>
+    <% } %>
+</div>
+
+</div>
+
+
+<% include footer %>

@@ -1,0 +1,184 @@
+<% include layouts/header %>
+
+<div class="container-fluid bg-2">
+    <div class="row center-top">
+        <div class="col-md-12">
+            <div class="closeB-wrapper">
+                <a href="#" data-toggle="tooltip" title="Cancel Ordering" class="closeB"></a>
+
+            </div>
+            <div class="container-fluid ">
+                <div class="steps-indicator">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+
+                        <label class="mid-label step a m-shadow">Address</label>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step">Payment</label>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step">Done</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <div class="cart-banner  m-d">
+                <form class="usrdtafrm" action="#">
+                    <h1 class="heading g">Please Review Your Details </h1>
+                    <div class="Addr-cart-selector">
+                        <h3 class="sub-heading xl">Your Address</h3>
+                        <br />
+                        <span class="small-para fw">Area</span>
+                        <br />
+                        <input required type="text" class="addr-area m-input inpt para" />
+                        <br />
+                        <span class="small-para fw">City</span>
+                        <br />
+                        <input required type="text" class="addr-city m-input inpt para" />
+                        <br />
+                        <span class="small-para fw">State</span>
+                        <br />
+                        <input required type="text" class="addr-state m-input inpt para" />
+                        <br />
+                        <span class="small-para fw">Full Address</span>
+                        <br />
+                        <br />
+                        <textarea required class="addr-whole para m-input inpt"></textarea>
+
+
+                        <p class="small-para">Please Write new address if you Want to change</p>
+
+                    </div>
+                    <div class="Addr-cart-selector">
+                        <h3 class="sub-heading xl">Your Phone</h3>
+                        <input type="number" required class="ph m-input inpt para" value="<%= loggedInUser.mobile || '' %>"
+                            placeholder="<%= loggedInUser.mobile || 'Please Enter your phone number' %>" />
+                    </div>
+                    <button class="btn-g usrdtachkout-btn blue-btn  m-shadow" type="submit">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        Confirm
+                    </button>
+                    <button class="btn-g usrdtachkout-btn blue-btn m-shadow" type="button" id="detectme">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        Locate me
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="center-top"></div>
+            <div class="product-details mp-c" id="addr_guide_img">
+
+                <div class="dummy-div">
+                    <div class="dummy line"></div>
+                    <div class="dummy line"></div>
+                    <div class="dummy line"></div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+</div>
+
+<script>
+    $(window).load((e) => {
+        if (localStorage.getItem('UserAddress') !== 'undefined') {
+            console.log("address present");
+            $('.addr-area').val(localStorage.getItem('userArea'));
+            $('.addr-city').val(localStorage.getItem('userCity'));
+            $('.addr-state').val(localStorage.getItem('userState'));
+            $('.addr-whole').val(localStorage.getItem('UserAddress'));
+        }
+    })
+    $('.usrdtafrm').submit(async (e) => {
+
+        e.preventDefault();
+        await localStorage.removeItem('proObjt');
+        await localStorage.removeItem('chkoutdtaUserarea');
+        await localStorage.removeItem('prochkoutdtaUsercityObjt');
+        await localStorage.removeItem('chkoutdtaUserstate');
+        await localStorage.removeItem('chkoutdtaUsermobile');
+        await localStorage.removeItem('chkoutdtaUserfull');
+
+        const metadata = {
+            _cartID: "<%= orderDetails._cartID %>",
+            _orderId: "<%= orderDetails._id %>",
+            address: {
+                'addr-area': $('.addr-area').val(),
+                'addr-city': $('.addr-city').val(),
+                'addr-state': $('.addr-state').val(),
+                'addr-whole': $('.addr-whole').val()
+            },
+            mobile: $('.ph').val()
+        }
+        $.ajax({
+            url: "/order/cart/updateOne",
+            data: {
+                metadata
+            },
+            type: "post",
+            dataType: "text",
+            success: (res) => {
+                console.log('res :', JSON.parse(res));
+                const response = JSON.parse(res);
+                $('.usrdtafrm').append(
+                    `
+                <a onclick="notifyWindowLimit('${response._id}',false)" href="#" class="col-md-12 m-btn btn m-half-auto blue-btn">Just Pay</a>
+                        <span class="addr-sum-title col-md-12">You Have <span class="blue-whitebg-badge">  <img class="icon-svg sh" src="/images/icon/rupee-indian.svg" alt=""> <%= loggedInUser.coins %></span>  Coins in Your wallet</span>
+                        <a  onclick="notifyWindowLimit('${response._id}',true)" href="#" class="col-md-12 m-btn btn m-half-auto white-btn">Use <%= loggedInUser.coins %> Coins & Pay</a>
+                        `
+                );
+                // document.location.href = "/cart/payment/"+response._id;
+            }
+        })
+
+    })
+
+    function notifyWindowLimit(order_id, isCoin) {
+
+        alert("YOU WILL BE REDIRECT TO HOME PAGE <br/>  AFTER 10-MINUTES FROM NOW");
+        if (isCoin) {
+            window.location.href = `/payment/u_c/show/${order_id}/c`;
+        } else {
+            window.location.href = `/cart/payment/${order_id}`;
+        }
+
+    }
+</script>
+
+
+<script>
+    $.ajax({
+        url: "/show/banners/address_page",
+        type: "get",
+        success: (res) => {
+            var outputString = '';
+            for (let i = 0; i < res.length; i++) {
+                outputString = outputString +
+                    `
+            <div class="m-shadow m-half-auto ht-10">
+                <img src="/images/website-img/${res[i].banner_name_img}"  alt="GUIDE">
+            </div>
+            `;
+            }
+            $('#addr_guide_img').html(outputString);
+        }
+    })
+</script>
+<% include layouts/footer %>

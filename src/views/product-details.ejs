@@ -1,0 +1,495 @@
+
+
+<% include layouts/header %>
+
+<style>
+
+/* .single_product_details_area .single_product_desc span {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #787878;
+    margin-bottom: 10px;
+    display: block;
+} */
+.single_product_details_area .single_product_desc .product-price {
+    margin-bottom: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 24px;
+    color: #dc0345;
+    font-weight: 700;
+}
+.single_product_details_area .single_product_desc .product-desc {
+    font-size: 16px;
+    color: #787878;
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 400;
+}
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+.mt-50 {
+    margin-top: 50px !important;
+}
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+.mr-5, .mx-5 {
+    margin-right: 3rem!important;
+}
+
+
+
+.single_product_details_area .single_product_desc .nice-select {
+    position: relative;
+    z-index: 10;
+    border: 1px solid #ebebeb;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 500;
+    height: 60px;
+    line-height: 60;
+    margin: 0;
+    text-transform: uppercase;
+    width: 220px;
+}
+.nice-select {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #e8e8e8;
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    height: 42px;
+    line-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+}
+.flexslider .slides img{
+        width: fit-content !important;
+    display: block !important;
+    margin: auto !important;
+}
+.flexslider .slides img {
+    height: fit-content !important;
+}
+.mr-5, .mx-5 {
+    margin-right: 3rem!important;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+
+.single_product_details_area .single_product_desc .cart-fav-box .favme {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 24px;
+}
+
+
+
+    .single_product_details_area {
+    position: relative;
+    z-index: 10;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.single_product_details_area .single_product_thumb, .single_product_details_area .single_product_desc {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+
+    position: relative;
+    z-index: 1;
+}
+.single_product_details_area .product_thumbnail_slides {
+    position: relative;
+    z-index: 1;
+}
+.single_product_details_area .single_product_desc {
+    position: relative;
+    z-index: 1;
+    padding: 50px 5%;
+}
+.my-select{
+    padding: 1em;
+    background: white;
+    color: grey;
+    border: .1px solid #e2e2e2;
+    width: 15em;
+    font-weight: 500;
+    letter-spacing: .2em;
+}
+.pro-tag.p{
+    background: gold;
+    color: white;
+    font-weight: 700;
+}
+.pro-tag{
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.87);
+    border: none;
+    cursor: default;
+    height: 32px;
+    outline: none;
+    padding: 0;
+    display: inline-flex;
+    font-size: 0.8125rem;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    white-space: nowrap;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border-radius: 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    justify-content: center;
+    background-color: #e0e0e0;
+    width: 8em;
+    font-size: 15px;
+}
+
+.single_product_details_area .product_thumbnail_slides .owl-prev, .single_product_details_area .product_thumbnail_slides .owl-next {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    position: absolute;
+    top: 50%;
+    z-index: 20;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    padding: 5px;
+    opacity: 0.4;
+}
+.single_product_details_area .product_thumbnail_slides .owl-next {
+    left: auto;
+    right: 30px;
+}
+.b-heading{
+    color: black;
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: "Ubuntu", sans-serif;
+}
+.g-heading{
+    color: #97c34e;
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+.my-tb-btn li a{
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    border-radius: 0;
+
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+    background-color: #7dc240;
+    border-radius: 0;
+    color: white;
+}
+.tab-content {
+    padding: 20px 0px 0px;
+}
+.specifications h3 {
+
+    text-transform: uppercase;
+    color: #100b0b;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+div#profile p, div#home p, div#messages {
+    line-height: 1.8em;
+    color: #777575;
+    font-weight: 400;
+    font-size: 16px;
+}
+.product-h span{
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 22px;
+    position: relative;
+    display: -webkit-inline-box;
+    white-space: initial;
+    overflow: initial;
+    text-overflow: initial;
+    color: #333333;
+    width: 33%;
+    line-height: 3em;
+}
+.product-h{
+    list-style: none;
+}
+.product-h span i{
+    color: #989898;
+    margin: auto .5em;
+    font-size: 10px;
+    vertical-align: unset;
+
+}
+.flex-control-thumbs li{
+    height: 7em;
+}
+.imagezoom-view{
+    background: whitesmoke!important;
+    /* box-shadow : 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)!important; */
+
+}
+</style>
+
+<div class="alignment-container" style="padding:3em 0 ">
+    <div class="col-md-12">
+        <div class="m-card-2">
+           <div class="m-card-success m-shadow m-half-auto">
+               <span class="m-circle"><i class="fa fa-check" aria-hidden="true"></i></span>
+               <span>Successfully added <%= productDetails.name %> to your cart </span>
+                <span style="float: right; ">
+                    <a href="/cart" class="m-btn white-btn txt-upr">Proceed To Checkout</a>
+                    <a href="/" class="m-btn white-btn txt-upr">Continue Shopping</a>
+                </span>
+            </div>
+        </div>
+        <div class="product-content-div">
+
+            <section class="single_product_details_area  align-items-center container bg-2 p-h-0 ">
+
+                    <!-- Single Product Thumb -->
+                    <div class="single_product_thumb clearfix col-md-7">
+
+                        <div class="flexslider">
+                                <ul class="slides">
+                                <% for (let i =0;i<productDetails.images.length ; i++){ %>
+                                    <li data-thumb="http://localhost:8000/images/product-img/<%= productDetails.images[i] %>">
+                                        <div class="thumb-image">
+                                            <img src="http://localhost:8000/images/product-img/<%= productDetails.images[i] %>" data-imagezoom="true" class="img-responsive">
+                                        </div>
+                                    </li>
+                                <% } %>
+
+
+                                </ul>
+                              <div class="clearfix"></div>
+                          </div>
+                    </div>
+
+                    <!-- Single Product Description -->
+                    <div class="single_product_desc clearfix col-md-5 p-h-0">
+                        <span></span>
+                        <a href="cart.html">
+                            <h2 class="g-heading"> <%= productDetails.name %> </h2>
+                        </a>
+
+
+                        <!-- <span class="pro-tag cost m-shadow" >  </span> -->
+                        <span class="pro-tag cost m-shadow" ><%= productDetails.category %>  </span>
+                        <span class="pro-tag cost m-shadow" ><%= productDetails.subCategory %>  </span>
+                        <br/>
+                        <span class=" m-btn btn m-half-auto blue-btn txt-upr " style="text-align: left;font-size: 10px;" >
+                            <big style="font-size: 2rem;"> 1% </big>
+
+                            to your coin
+
+
+                            <i
+                            class="fa fa-info-circle"
+                            style="font-size: 1.4em;
+                                margin: auto;
+                                padding: .4em;"
+                            data-toggle="tooltip"
+                            title="The 1% of this price "
+                            data-placement="right"
+                            aria-hidden="true"></i>
+                        </span>
+
+                        <p class="product-price">  <img class="icon-svg sh" src="/images/icon/rupee-indian.svg" alt=""> <%= productDetails.price %> </p>
+
+
+                        <!-- Form -->
+                        <% if(productDetails.isOutOfStock == true){ %>
+                                <span class="outOfStockAlert m-half-auto  txt-upr btn m-btn">Out Of Stock</span>
+                        <% }else{ %>
+        <form class="cart-form clearfix" method="post" action="/buy/product/<%= productDetails.id %>">
+                                    <!-- Select Box -->
+                                    <input name="_pro_i_d" type="hidden" value="<%= pid %>" />
+                                    <div class="m-half-auto " style="margin: 1em auto;">
+                                            <input type="number" class="my-select mr-5" required name="quantity" placeholder="quantity"/>
+                                            <!-- <i class="fa fa-sort-numeric-desc" aria-hidden="true" style="margin:auto .5em" ></i> -->
+
+                                    </div>
+
+                                    <!-- Cart & Favourite Box -->
+                                    <div class="cart-fav-box d-flex align-items-center">
+                                        <!-- Cart -->
+                                        <% if(!user){ %>
+                                            <a href="/auth/login" style="font-size: 15px;padding: .5em;" class="m-btn white-btn">LOGIN & ADD TO CART</a>
+                                        <% }else{ %>
+                                        <button type="submit" name="addtocart"  class="cart-btn m-btn">Add to cart</button>
+                                        <% } %>
+                                        <button type="submit" class="buy-now-btn m-btn" >Buy Now </button>
+                                        <!-- Favourite -->
+                                        <div class="product-favourite ml-4">
+
+                                            <a
+                                            style="right:.5em;"
+                                            href="/product/add/fav/<%= productDetails.id %>/<%= productDetails._vendorID._id %>"
+                                            class="my-fav-hert fa fa-heart-o"></a>
+                                            <span
+                                            class="small-label"
+                                            style="    position: absolute;
+                                            top: 0;
+                                            right: 0em;
+                                            font-size: 1.3em;
+                                            color: black;"><%= productDetails.favCount %></span>
+                                        </div>
+                                    </div>
+
+                                </form>
+                        <% } %>
+
+                        <div class="w-full d-flex">
+
+                           <!-- <% var metadata = JSON.stringify(productDetails.metaData) %>
+                            <%  metadata = JSON.parse(metadata) %>
+                            <% for (const key in metadata) { %>
+                                <% if (metadata.hasOwnProperty(key)) { %>
+                                   <% const element = metadata[key]; %>
+                                    <span><%= element %></span>
+                                <% } %>
+                            <% } %> -->
+                        </div>
+                    </div>
+                </section>
+            <div class="col-lg-12">
+                <div class="specifications">
+                    <div class="container">
+                      <h3>Item Details</h3>
+                        <div class="detai-tabs">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-pills tab-nike my-tb-btn" role="tablist">
+                                    <li role="presentation"><a href="#highlights" aria-controls="highlights" role="tab" data-toggle="tab">highlights</a></li>
+                                <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Description</a></li>
+                                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Terms & conditions</a></li>
+
+                            </ul>
+
+
+                        </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+
+                            <div role="tabpanel" class="tab-pane active" id="profile">
+                            <p>
+                                <%= productDetails.description %>
+                            </p>
+
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="messages">
+                                <%= productDetails.termsAndConditions %>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="highlights">
+                                    <p class="product-desc">
+                                            <div class="product-h">
+                                                <% productDetails.highlights.forEach(h => {
+                                                %> <span><i class="fa fa-circle" aria-hidden="true"></i> <%= h %></span><%
+                                                }) %>
+                                            </div>
+                                        </p>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<% include layouts/popular-product %>
+<% include layouts/recomended-product %>
+<script>
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+          });
+        });
+        </script>
+<script>
+
+    $('.cart-form button[name="addtocart"]').click(e => {
+        e.preventDefault();
+        const quantity = $('.cart-form input[name="quantity"]').val();
+
+        // load the spinner
+        $('.cart-btn.m-btn').html('<i class="fa fa-spinner fa-spin" style="font-size: 24px;line-height: 1.5em;"></i>')
+
+        // check for the quantity
+        if(quantity === undefined || quantity == 0){
+            toastr.error("Please Enter amount")
+            $('.cart-form input[name="quantity"]').css({"border":'2px solid red'})
+            $('.cart-btn.m-btn').html("Add to cart");
+        }else{
+            $('.cart-form input[name="quantity"]').css({"border":'2px solid #00c100'})
+            $.ajax({
+                 url:"/cart/add/<%= productDetails._id %> ",
+                 type:"post",
+                 data : {
+                     quantity
+                 },
+                 dataType:"text",
+                 success : (res)=>{
+
+                    res = JSON.parse(res);
+                    if ( res.status == "FAILED"){
+                        toastr.error(res.type)
+                        $('.cart-btn.m-btn').html("Add to cart")
+
+                    }else{
+                          $('.m-card-success').show();
+                    $('.product-content-div').hide()
+                    $('#c-bdge').load(res[0].numberOfItem)
+                    }
+
+                }
+
+            })
+        }
+    })
+</script>
+
+<% include layouts/footer %>
+
+

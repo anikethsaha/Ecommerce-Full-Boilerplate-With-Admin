@@ -1,0 +1,105 @@
+<% include layouts/header %>
+<div class="container-fluid bg-2" >
+    <div class="row center-top">
+    <div class="col-md-1"></div>
+    <div class="col-md-2 profile-handler p-h-0">
+        <ul>
+            <a href="#pOrders"   id="pOrders-handler" ><li><span class="med-heading clr-blue  p-1 p-v-0 line-ht-big">Orders</span> </li></a>
+            <a href="#pSettings" id="pSettings-handler"><li><span class="med-heading clr-blue  p-1 p-v-0 line-ht-big">Settings</span></li></a>
+            <a href="#pFav" id="pFav-handler"><li><span class="med-heading clr-blue  p-1 p-v-0 line-ht-big">Favourite</span></li></a>
+
+        </ul>
+    </div>
+    <div class="col-md-6 p-h-0  profile-content">
+        <div class="col-md-12  m-border-left" id="pOrders">
+            <div class="col-md-12">
+                <div class="dummy-div">
+                    <div class="dummy line"></div>
+                    <div class="dummy line"></div>
+                    <div class="dummy line"></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12  m-border-left" id="pSettings">
+            <% include profile-component/setting %>
+        </div>
+        <div class="col-md-12  m-border-left" id="pFav">
+                <div class="content-wrapper">
+                        <div class="dummy-div">
+                                <div class="dummy line"></div>
+                                <div class="dummy line"></div>
+                                <div class="dummy line"></div>
+
+                            </div>
+
+                      </div>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="col-lg-12 m-border-full  p-1">
+            <span class="col-lg-12 m-grey-title m-half-auto blue-title" >My Details</span>
+            <div class="col-md-12 p-h-0 m-half-auto ">
+
+                <span class="col-md-12 meta-data-span"><%= userDetails.name %></span>
+                <span class="col-md-12 meta-data-span"><%= userDetails.email || "No email Added"%></span>
+                <span class="col-md-12 meta-data-span"><%= userDetails._oauthid %></span>
+            </div>
+            <div class="col-lg-12 p-h-0 m-half-auto ">
+                <img class="col-md-4 coin-icon" src="https://png.icons8.com/metro/50/2561c1/money-bag-rupee.png">
+                <div class="col-md-8 p-h-0">
+                    <span class="col-md-12 p-h-0 m-grey-title m-title-bold blue-title"><%= userDetails.coins %></span>
+                    <span class="col-md-12 p-h-0 meta-data-span blue-title">Your Coins</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    $(window).on('load',async e => {
+        await loadOrders();
+         await loadFav();
+    })
+   $(window).on('hashchange',e => {
+       var hash = window.location.hash != '' ? window.location.hash : '#pOrders';
+       console.log('hash :', hash);
+       $('.profile-content > div').hide()
+       $('.profile-content > div').filter(hash).show();
+       $('.profile-handler ul li ').removeClass('pro-handler-active')
+       $(`${hash}-handler li `).addClass('pro-handler-active');
+   }).trigger('hashchange')
+    function loadOrders(){
+        $.ajax({
+                 url:"/profile/orders/fetch",
+                 type:"get",
+                 dataType:"text",
+                 success : (res)=>{
+
+                    $("#pOrders > div").html(res);
+
+                 }
+                 })
+    }
+    function loadFav(){
+
+        $.ajax({
+                 url:"/profile/fav/fetch",
+                 type:"get",
+                 dataType:"text",
+                 success : (res)=>{
+
+                    $("#pFav").html(res);
+
+                 }
+                 })
+    }
+</script>
+<% include layouts/footer %>

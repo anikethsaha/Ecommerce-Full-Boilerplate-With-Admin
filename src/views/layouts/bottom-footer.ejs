@@ -1,0 +1,147 @@
+<style>
+    .footer-logo {
+        font-size: 2em;
+        padding: 1em;
+        font-weight: 600;
+        letter-spacing: .1em;
+        color: white;
+
+        line-height: 4em;
+    }
+
+    footer {
+        color: #7b7b7b;
+    }
+
+    .footer_widget_menu a {
+        color: #434343;
+        font-size: 14px;
+        /* color: #999; */
+        text-transform: inherit;
+        padding-bottom: 10px;
+        display: block;
+    }
+
+    .b-footer {
+        padding: 3em;
+        background: #172337;
+    }
+    .social_links a{
+            display:unset;
+    }
+</style>
+
+<div class="col-12 ">
+
+    <div class="b-footer">
+        <div class="container">
+            <div class='col-lg-3'>
+                <div class="footer-logo">WebsiteName</div>
+            </div>
+
+            <div class=" col-md-3">
+                <div class="single_widget_area mb-30">
+                    <ul class="footer_widget_menu">
+                        <li><a href="/community">Community</a></li>
+                        <li><a href="/page#guide">Guides</a></li>
+                        <li><a href="/page#paymentOpt">Payment Options</a></li>
+                        <li><a href="/page#ship-del">Shipping and Delivery</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class=" col-md-3">
+                <div class="single_widget_area mb-30">
+                    <ul class="footer_widget_menu">
+                        <li><a href="/page#about">About Us</a></li>
+                        <li><a href="/page#pp">Privacy Policy</a></li>
+                        <li><a href="/page#tnc">Terms of Use</a></li>
+                        <li><a href="/donate">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class=" col-md-3">
+                <div class="single_widget_area mb-30">
+                    <ul class="footer_widget_menu">
+                        # 720/A1, 1st Floor, 9th Cross, <br />11th Main, HAL 2nd Stage,<br /> Indira Nagar,<br />
+                        Bangalore Bangalore KA 560008 IN
+                        <li class="social_links">
+                            <a href="" id="tt_link" >
+                                <i aria-hidden="true" class="fa fa-twitter" style="margin:.3em;font-size:28px;"></i>
+                            </a>
+                            <a href="" id="gplus_link">
+                                <i aria-hidden="true" class="fa fa-google-plus-square" style="margin:.3em;font-size:28px;"></i>
+                            </a>
+
+                            <a href="" id="fb_link">
+                            <i aria-hidden="true" class="fa fa-facebook-square" style="margin:.3em;font-size:28px;"></i>
+
+                            </a>
+                            <a href="" id="insta_link">
+                               <i aria-hidden="true" class="fa fa-instagram" style="margin:.3em;font-size:28px;"></i>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    $.ajax({
+        url: "/show/banners/logo",
+        type: "get",
+        success: (res) => {
+
+            $('.footer-logo').html(
+                `
+            <a class="" id="" href="/">
+                <img width="180px" height="40px " src="/images/website-img/${res[0].banner_name_img}">
+            </a>
+            `
+            );
+        }
+    })
+
+
+    $.ajax({
+        url: "/show/banners/fb_link",
+        type: "get",
+        success: (res) => {
+
+            $('#fb_link').attr("href",res[0].banner_text);
+        }
+    })
+
+    $.ajax({
+        url: "/show/banners/tt_link",
+        type: "get",
+        success: (res) => {
+
+            $('#tt_link').attr("href",res[0].banner_text);
+        }
+    })
+
+    $.ajax({
+        url: "/show/banners/insta_link",
+        type: "get",
+        success: (res) => {
+
+            $('#insta_link').attr("href",res[0].banner_text);
+        }
+    })
+
+    $.ajax({
+        url: "/show/banners/gplus_link",
+        type: "get",
+        success: (res) => {
+
+            $('#gplus_link').attr("href",res[0].banner_text);
+        }
+    })
+</script>

@@ -1,0 +1,206 @@
+<% include layouts/header %>
+
+<div class="container-fluid bg-2">
+    <div class="row center-top">
+        <div class="col-md-12">
+            <div class="closeB-wrapper">
+                <a href="#" onclick="cancelOrdering()" data-toggle="tooltip" title="Cancel Ordering" class="closeB"></a>
+
+            </div>
+            <div class="container-fluid ">
+                <div class="steps-indicator">
+                    <div class="col-md-1">
+
+                        <label class="mid-label step inactive-step"> <i class="fa fa-check green-check" aria-hidden="true"></i>
+                            Address</label>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="mid-label step a m-shadow">Review </label>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step">Payment</label>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step">Done</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <div class="center-top" id='item-sum'>
+
+                <div class="dummy-div">
+                    <div class="dummy line"></div>
+                    <div class="dummy line"></div>
+                    <div class="dummy line"></div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="center-top">
+                <div class="payment-summary-div">
+                    <div class="col-md-12">
+                        <span class="med-heading col-md-12">Payment Summary</span>
+                    </div>
+
+                    <div class="bill-sum" id="bill-target">
+                        <div class="dummy-div">
+                            <div class="dummy line"></div>
+                            <div class="dummy line"></div>
+                            <div class="dummy line"></div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-12">
+
+                        <a href="#" onclick="notifyWindowLimit('<%= orderDetails._id %>',false)" class="col-md-12 m-btn btn m-half-auto blue-btn">Just
+                            Pay</a>
+                        <span class="addr-sum-title col-md-12">You Have <span class="blue-whitebg-badge"> <img class="icon-svg sh"
+                                    src="/images/icon/rupee-indian.svg" alt="">
+                                <%= orderDetails._userID.coins %></span> Coins in Your wallet</span>
+                        <a href="#" onclick="notifyWindowLimit('<%= orderDetails._id %>',true)" class="col-md-12 m-btn btn m-half-auto white-btn">Use
+                            <%= orderDetails._userID.coins %> Coins & Pay</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+</div>
+
+<script>
+function cancelOrdering(){
+
+    var isCancelOrderConfirmed = confirm("Sure Want To Cancel The Order ?");
+    if(isCancelOrderConfirmed){
+
+        location.replace("/order/cancel/<%= orderDetails._id %>/<%= orderDetails._userID._id %>");
+    }else{
+        console.log("not cancelling")
+        return null;
+    }
+}
+    function notifyWindowLimit(order_id, isCoin) {
+
+        alert("YOU WILL BE REDIRECT TO HOME PAGE <br/>  AFTER 10-MINUTES FROM NOW");
+        if (isCoin) {
+            window.location.href = `/payment/u_c/show/${order_id}/b`;
+        } else {
+            window.location.href = `/payment/show/${order_id}`;
+        }
+
+    }
+    $(window).load(async e => {
+
+        await loadBillSummary();
+
+
+        await loadItemSummary();
+        await loadAddressSummary();
+
+    })
+
+    async function loadAddressSummary() {
+        var outputString =
+            `<div class="address-sum">
+                    <div class="col-md-12 center-top m-shadow " style="   padding: 1em">
+
+                            <span class="med-heading col-md-12">Delivery Summary</span>
+                            <span class="col-md-12 addr-sum-title">User Details</span>
+                            <span class="address-span col-md-12"><%= orderDetails._userID.name %> </span>
+                            <span class="address-span col-md-12"><%= orderDetails.mobileNo %> </span>
+                            <span class="col-md-12 addr-sum-title">Address</span>
+                            <% orderDetails.delivery_location.forEach(add => { %>
+                                <span class="address-span col-md-12"><%= add %> </span>
+
+                            <% }) %>
+                    </div>
+                </div>`;
+        $('#addr-sum').html(outputString);
+
+    }
+    async function loadBillSummary() {
+        var cost = "<%= orderDetails.cost%>"
+        var shippingCharges = 50;
+        if (cost > 999) {
+            shippingCharges = 0
+        }
+        const totalCost = parseInt(cost) + parseInt(shippingCharges);
+        const eachProductPrice = "<%= orderDetails._productID.price %>";
+
+        var billOuput =
+            `<div class="col-md-12 sub-bill">
+                                <span class="col-md-6">Each Product Cost</span>
+                                <span class="col-md-4"></span>
+                                <span class="col-md-2"><%= orderDetails._productID.price %></span>
+                            </div>
+                            <div class="col-md-12 sub-bill">
+                                <span class="col-md-6">Shipping Cost</span>
+                                <span class="col-md-4"></span>
+                                <span class="col-md-2">${shippingCharges}</span>
+                            </div>
+
+                            <div class="col-md-12 total-bill ">
+                                    <span class="col-md-6">Total</span>
+                                    <span class="col-md-4"></span>
+                                    <span class="col-md-2">${totalCost}</span>
+                            </div>`;
+        $('#bill-target').html(billOuput);
+    }
+    async function loadItemSummary() {
+        var outputString =
+            `
+       <div class="item-summary-div">
+                        <div class="col-md-12">
+                            <span class="med-heading col-md-12">Item Summary</span>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <img src="http://localhost:8000/images/product-img/<%= orderDetails._productID.images[0] %>" alt="" srcset="">
+                            </div>
+                        <div class="col-md-9 p-h-0">
+                            <div class="col-md-9 p-h-0 item-sum">
+                                <a class="col-md-12" href="/show/product/<%= orderDetails._productID._id %>"> <%= orderDetails._productID.name %> </a>
+
+                                <span class="col-md-5 item-sum-k">Sold By:</span>  <span class="col-md-7">Setu E-tail Pvt Ltd</span>
+                                <span class="col-md-5 item-sum-k">Sold By:</span>  <span class="col-md-7">Setu E-tail Pvt Ltd</span>
+
+                            </div>
+                            <div class="col-md-3 text-rt p-h-0">
+                                <div class="col-md-12 p-h-0">
+                                        <img class="icon-svg sh" src="/images/icon/rupee-indian.svg" alt="">
+                                        <span class="price-span"> <%= orderDetails._productID.price %> </span>
+                                </div>
+
+                                <a href="#"  class="col-md-12 blck-txt p-h-0 m-half-auto">Return policy</a>
+                            </div>
+                        </div>
+
+                        </div>
+                </div>
+                <div id="addr-sum"></div>
+                `;
+        $('#item-sum').html(outputString);
+    }
+</script>
+<% include layouts/footer %>

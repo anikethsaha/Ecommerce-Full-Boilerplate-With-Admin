@@ -1,0 +1,58 @@
+<% include header %>
+
+
+
+<h1 class="m-2 text-center p-2">Community Page description</h1>
+<div class="w-5/6 m-auto my-4 flex flex-wrap">
+<form
+action="/add/community"
+class="bg-white shadow-md rounded  w-full  px-8 pt-6 pb-8 mb-4"
+method="post"
+>
+<div class="mb-4">
+
+    <textarea
+
+    name="Community"
+    class="shadow editor appearance-none border my-2 w-full rounded py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+    type="text"
+     >
+    </textarea>
+
+</div>
+<button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+Add
+</button>
+
+</form>
+</div>
+
+
+<h1 class="m-2 text-center p-2">Donate Page description</h1>
+<div class="w-5/6 m-auto my-4 flex flex-wrap">
+<form
+action="/add/donate"
+class="bg-white shadow-md rounded  w-full  px-8 pt-6 pb-8 mb-4"
+method="post"
+>
+<div class="mb-4">
+
+    <textarea
+
+    name="donate"
+    class="shadow editor appearance-none border my-2 w-full rounded py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+    type="text"
+     >
+    </textarea>
+
+</div>
+<button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+Add
+</button>
+
+</form>
+</div>
+
+
+
+<% include footer %>

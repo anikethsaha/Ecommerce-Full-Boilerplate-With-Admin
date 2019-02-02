@@ -1,0 +1,41 @@
+          <!-- <div class="col-md-12">
+                        <div class="dummy-div">
+                            <div class="dummy line"></div>
+                            <div class="dummy line"></div>
+                            <div class="dummy line"></div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-12 m-half-auto">
+                        <span class=" m-grey-title col-md-12 m-half-auto">Change Email</span>
+                        <form action="/profile/add/email"  method="POST" class="col-lg-12">
+                            
+                            <input type="email" name="email" class="m-input col-lg-9" placeholder="<%= userDetails.email || 'NO EMAIL ADDED' %>" value="<%= userDetails.email %>">
+                            <button type="submit" class="col-lg-3 m-btn-2 black-bg"> <i class="fa fa-envelope" aria-hidden="true"></i>  Save</button>   
+
+                        </form>
+                         
+                    </div>
+                    <div class="col-lg-12 m-half-auto">
+                        <span class=" m-grey-title col-md-12 m-half-auto">Change Phone Number</span>
+                        <form action="" class="col-lg-12">
+                            
+                            <input type="tel" name="mobile" class="m-input col-lg-9" placeholder="<%= userDetails.mobile || 'NO MOBILE NUMBER ADDED' %>" value="<%= userDetails.mobile %>">
+                            <button type="button" class="col-lg-3 m-btn-2 black-bg"><i class="fa fa-phone" aria-hidden="true"></i> Save</button>   
+
+                        </form>
+                            
+                    </div>
+                    <div class="col-lg-12 m-half-auto">
+                        <span class=" m-grey-title col-md-12 m-half-auto">Change Address</span>
+                        <form action="/profile/add/addr" method="POST" class="col-lg-8 col-lg-offset-2">
+    
+                            <input type="text" name="addr1" class="m-input col-md-12 m-half-auto" required placeholder="<%= userDetails.address[0] || 'Address 1' %>">
+                            <input type="text" name="addr2" class="m-input col-md-12 m-half-auto" required placeholder="<%= userDetails.address[1] || 'Address 2' %>">
+                            <input type="text" name="city" class="m-input col-md-12 m-half-auto" required placeholder="<%= userDetails.address[2] || 'city' %>">
+                            <input type="text" name="state" class="m-input col-md-12 m-half-auto" required placeholder="<%= userDetails.address[3] || 'state' %>">
+                            <input type="number" name="pin" class="m-input col-md-12 m-half-auto" required placeholder="<%= userDetails.address[4] || 'pin' %> ">
+                            <button type="submit" class="col-md-12 m-btn-2 m-half-auto  black-bg"><i class="fa fa-map-marker" aria-hidden="true"></i> Save</button>   
+
+                        </form>
+                            
+                    </div>

@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>Settings</title>
+    </head>
+    <style>
+        #nav{
+            color:white;
+            background-image: linear-gradient(to bottom right, Violet, blue);
+            font-size: 20px;
+            
+            
+        }
+        .nav{
+            list-style: none;
+            display:inline-block;
+            padding:  10px;
+            border-spacing: 20px;
+            padding-right: 44px;
+            padding-left: 44px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+         hr{
+              background-image: linear-gradient(to bottom right, Violet, blue);
+              height: 10px;
+        }
+    </style>
+    <body>
+        <nav id="nav">
+            <ul>
+                <li class="nav"><a href="">Dashboard</a></li>
+                <li class="nav"><a href="./userdetails.html">User Details</a></li>
+                <li class="nav"><a href="./banner.html">Banner</a></li>
+                <li class="nav"><a href="./product.html">Products</a></li>
+                <li class="nav"><a href="./recommended.html">Recommended</a></li>
+                 <li class="nav"><a href="./alsoviewed.html">Also Viewed</a></li>
+                <li class="nav"><a href="./settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <form>
+            <fieldset>
+                <legend>Settings</legend>
+                <form>
+                    <fieldset>
+                        <legend>Change Password</legend>
+                  
+                    <table border="2">
+                        <tr>
+                            <th>Current Password</th>
+                            <th><input type="password" name=""></th>
+                        </tr>
+                                <!-- CURRENT PASSWORD IS REQUIRED FOR CHANGING ANY OF THE BELOW DETAILS ELSE CONTACT ADMIN-->
+                                <!-- CURRENT PASSWORD IS REQUIRED FOR CHANGING ANY OF THE BELOW DETAILS ELSE CONTACT ADMIN-->
+                                <!-- CURRENT PASSWORD IS REQUIRED FOR CHANGING ANY OF THE BELOW DETAILS ELSE CONTACT ADMIN-->
+                                <!-- CURRENT PASSWORD IS REQUIRED FOR CHANGING ANY OF THE BELOW DETAILS ELSE CONTACT ADMIN-->
+                                <!-- CURRENT PASSWORD IS REQUIRED FOR CHANGING ANY OF THE BELOW DETAILS ELSE CONTACT ADMIN-->
+                        <tr>
+                            <th>New Password</th>
+                            <th><input type="password" name=""></th>
+                        </tr>
+                        <tr>
+                            <th>Confirm Password</th>
+                            <th><input type="password" name=""></th>
+                        </tr>
+                        <tr>
+                            <th>New Mobile</th>
+                            <th><input type="password" name=""></th>
+                        </tr>
+                        <tr>
+                            <th>New Email</th>
+                            <th><input type="email" name=""></th>
+                        </tr>
+                        <tr>
+                            <th>Confirm Email</th>
+                            <th><input type="email" name=""></th>
+                        </tr>
+                        <tr >
+                            <th colspan="2"><button type="submit" style="color:red; border-color: red;">Submit</button></th>
+                        </tr>
+                    </table>
+                 </fieldset>
+                </form>
+            </fieldset>
+        </form>
+       <H3>Current password is required for changing email,mobile and password if u dont remember the current password then only option should be to contact the admin</H3>
+        
+          <hr>
+        <form>
+            <fieldset>
+                <legend>Adding Admins</legend>
+           
+            <table border="2">
+                <tr>
+                    <th>Username</th>
+                    <th><input type="text" name=""></th>
+                </tr>
+                 <tr>
+                    <th>Password</th>
+                    <th><input type="password" name=""></th>
+                </tr>
+                <tr>
+                    <th>Confirm Password</th>
+                    <th><input type="password" name=""></th>
+                </tr>
+                <tr>
+                    <th>Mobile</th>
+                    <th><input type="number" name=""></th>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <th><input type="email" name=""></th>
+                </tr>
+                <tr>
+                    <th>Permissions</th>
+                    <th>
+                        <input type="checkbox" name="" value="view">View 
+                        <input type="checkbox" name="" value="edit">Edit
+                        <input type="checkbox" name="" value="addorremove">Add/Remove
+                        <input type="checkbox" name="" value="full">Full
+                    </th>
+                </tr>
+                <tr >
+                    <th colspan="2"><button type="submit" style="color:red; border-color: red;">Submit</button></th>
+                </tr>
+            </table>
+        </fieldset>
+        </form>
+        
+        <h2>Permissions</h2>
+        <h3>View means he can only view the userdetails and not the admin details</h3>
+        <h3>Edit means he can add or remove products,banner,recommended,alsoviewed</h3>
+        <h3>Add/Remove means he can add or remove admins but he can only remove the admins who doesnt have full access</h3>
+        <h3>Full means he has all the rights in the page he can even remove the admins with Full permission but except the main admin(that is like the one who added all the others).If i am adding all others and I gave Full permission to some user, they can remove each other but not me.</h3>
+    </body>
+</html>

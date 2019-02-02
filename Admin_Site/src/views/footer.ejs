@@ -1,0 +1,189 @@
+ </body>
+<script type="text/javascript"  src="/js/jquery-3.3.1.min.js"></script>
+  <!-- Include external JS libs. -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+
+   <!-- Include Editor JS files. -->
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/js/froala_editor.pkgd.min.js"></script>
+
+   <script type="text/javascript"  src="/js/jquery.dataTables.js"></script>
+
+<script>
+    $(window).on('load',(e) => {
+        var tableOutput = '';
+         $.ajax({
+                 url:"/get/products",
+                 type:"get",
+                 dataType:"text",
+                 success : (data)=>{
+                          data = JSON.parse(data);
+                   for (let i =0;i < data.length;i++){
+                       tableOutput  = tableOutput + `<tr class="p-2">`;
+                       tableOutput = tableOutput + `
+                       <td style="    text-align: center;">
+                            <a href="/change/product/${data[i][0]}" class="text-center bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded" >Edit</a>
+
+                        </td>
+                       `;
+                        for (let j =0 ;j < data[i].length; j++){
+                            if( typeof data[i][j] === 'object'){
+                                tableOutput  = tableOutput + `<td>`;
+                                for (const key in data[i][j]) {
+
+                                    if (data[i][j].hasOwnProperty(key)) {
+                                        const element = data[i][j][key];
+                                    tableOutput = tableOutput + `<span>${element}</span>`;
+                                    }
+                                }
+                                tableOutput  = tableOutput + `</td> `;
+                            }else{
+                                tableOutput  = tableOutput + `<td>${data[i][j]}</td>`;
+                            }
+                        }
+                        tableOutput  = tableOutput + `</tr>`;
+
+                    }
+                    $('#product_datatable tbody').html(tableOutput)
+                 }
+                 })
+
+                 var userTableOutput = '';
+        $.ajax({
+            url:"/get/users",
+            type:"get",
+            dataType:"text",
+            success : (data)=>{
+
+                    data = JSON.parse(data);
+            for (let i =0;i < data.length;i++){
+                userTableOutput  = userTableOutput + `<tr class="p-2">`;
+                for (let j =0 ;j < data[i].length; j++){
+                    if( typeof data[i][j] === 'object'){
+
+                        userTableOutput  = userTableOutput + `<td>`;
+                        for (const key in data[i][j]) {
+                            if (data[i][j].hasOwnProperty(key)) {
+                                const element = data[i][j][key];
+                            userTableOutput = userTableOutput + `<span>${element}</span>`;
+                            }
+                        }
+                        userTableOutput  = userTableOutput + `</td> `;
+                    }else{
+                        userTableOutput  = userTableOutput + `<td>${data[i][j]}</td>`;
+                    }
+
+                }
+                userTableOutput  = userTableOutput + `</tr>`;
+            }
+            $('#user_datatable tbody').html(userTableOutput)
+            }
+        })
+
+        var DeliveryTableOutput = '';
+        $.ajax({
+            url:"/get/delivery",
+            type:"get",
+            dataType:"text",
+            success : (data)=>{
+
+                    data = JSON.parse(data);
+            for (let i =0;i < data.length;i++){
+                DeliveryTableOutput  = DeliveryTableOutput + `<tr class="p-2">`;
+                for (let j =0 ;j < data[i].length; j++){
+                    if( typeof data[i][j] === 'object'){
+
+                        DeliveryTableOutput  = DeliveryTableOutput + `<td>`;
+                        for (const key in data[i][j]) {
+                            if (data[i][j].hasOwnProperty(key)) {
+                                const element = data[i][j][key];
+                            DeliveryTableOutput = DeliveryTableOutput + `<span>${element}</span>`;
+                            }
+                        }
+                        DeliveryTableOutput  = DeliveryTableOutput + `</td> `;
+                    }else{
+                        DeliveryTableOutput  = DeliveryTableOutput + `<td>${data[i][j]}</td>`;
+                    }
+
+                }
+                DeliveryTableOutput  = DeliveryTableOutput + `
+                <td>
+                    <a href="/change/delivery/${data[i][0]}" class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded" >Edit</a>
+
+                </td>
+                `;
+                DeliveryTableOutput  = DeliveryTableOutput + `</tr>`;
+            }
+            $('#delivery_datatable tbody').html(DeliveryTableOutput)
+            }
+        })
+
+        var OrderTableOutput = '';
+        $.ajax({
+            url:"/get/orders",
+            type:"get",
+            dataType:"text",
+            success : (data)=>{
+
+                    data = JSON.parse(data);
+            for (let i =0;i < data.length;i++){
+                OrderTableOutput  = OrderTableOutput + `<tr class="p-2">`;
+                for (let j =0 ;j < data[i].length; j++){
+                    if( typeof data[i][j] === 'object'){
+
+                        OrderTableOutput  = OrderTableOutput + `<td>`;
+                        for (const key in data[i][j]) {
+                            if (data[i][j].hasOwnProperty(key)) {
+                                const element = data[i][j][key];
+                            OrderTableOutput = OrderTableOutput + `<span>${element}</span>`;
+                            }
+                        }
+                        OrderTableOutput  = OrderTableOutput + `</td> `;
+                    }else{
+                        OrderTableOutput  = OrderTableOutput + `<td>${data[i][j]}</td>`;
+                    }
+
+                }
+                OrderTableOutput  = OrderTableOutput + `
+                <td>
+                    <a href="/change/order/${data[i][0]}" class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded" >Edit</a>
+
+                </td>
+                `;
+                OrderTableOutput  = OrderTableOutput + `</tr>`;
+            }
+            $('#order_datatable tbody').html(OrderTableOutput)
+            }
+        })
+
+
+    })
+
+
+
+ $('#product_datatable').DataTable();
+ $('#user_datatable').DataTable();
+ $('#delivery_datatable').DataTable();
+ $('#order_datatable').DataTable();
+</script>
+<script>
+ $(function() { $('.editor').froalaEditor() });
+ </script>
+ <script>
+    $.ajax({
+        url:"/get/stats",
+        type:"get",
+        success : (res) => {
+            console.log(res)
+            $('#total_products').html(res.products)
+            $('#total_cancellations').html(res.cancellations)
+            $('#total_deliveries').html(res.deliveries)
+            $('#total_orders').html(res.orders)
+            $('#total_vendor').html(res.sellers)
+            $('#total_users').html(res.users)
+            $('#total_shipping').html(res.shipping)
+        }
+    })
+ </script>
+</html>

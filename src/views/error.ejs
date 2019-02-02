@@ -1,0 +1,36 @@
+<% include layouts/header %>
+
+<div class="container-fluid bg-2">
+    <div class="row center-top">
+        <div class="alignment-container" style=" ">
+            <div class="col-md-12">
+                <div class="product-content-div" style="text-align:center;">
+                    <div class="col-xs-offset-4 col-xs-4">
+                        <img src="/images/website-img/sys_err.jpg" alt="error">
+                    </div>
+                    <div class="col-xs-12">
+                        <h3>
+                            <%= message %>
+                        </h3>
+                        <h4 style="color:red">
+                            <%= err %>
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+  setTimeout(function () {
+     // after 2 seconds
+     window.location = "/";
+  }, 4000)
+</script>
+
+
+
+
+<% include layouts/footer %>

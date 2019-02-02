@@ -1,0 +1,44 @@
+.invoice_head{
+  margin-bottom: 20px;
+}
+.invoice_head h1{
+  !font-family: title;
+  font-size: 40px;
+}
+.invoice_head p{
+    font-size: 14px;
+}
+.invoice_logo{
+  width: 130px;
+}
+
+
+
+@media print{
+	body {
+		visibility: hidden;
+	}
+
+	#print{
+		visibility: visible;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		border: none;
+		padding: 20px;
+		margin: 0px;
+	}
+
+	#print2{
+		display: block;
+	}
+
+	.ibox-content{
+		border-top: none;
+		padding: 30px;
+	}
+
+}

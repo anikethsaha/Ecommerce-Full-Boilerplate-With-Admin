@@ -1,0 +1,39 @@
+<style>
+    .offer-panel-img-holder img{
+        height: 100%;
+    }
+</style>
+
+<div class="center-top">
+        <div class="oa">
+                <div class="container">
+                    <div class="row" id="offer-panel-2">
+
+                    </div>
+                </div>
+            </div>
+</div>
+<script>
+$.ajax({
+    url:"/show/banners/discount_",
+    type:"get",
+    success : (res) => {
+
+        for(let i = 0 ;i<res.length;i++){
+            if(res[i].banner_name == `discount_${i}`){
+                $('#offer-panel-2').append(`
+                    <div class="col-lg-2">
+                        <a href="${res[i].banner_name_link}">
+                            <div style="height:20em;"  class="oa-content bg-img background-overlay offer-panel-img-holder" >
+                                <img src="/images/website-img/${res[i].banner_name_img}" alt="" srcset="">
+                            </div>
+                        </a>
+
+                    </div>
+
+                `);
+            }
+        }
+    }
+})
+</script>

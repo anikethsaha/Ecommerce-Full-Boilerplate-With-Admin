@@ -1,0 +1,228 @@
+<style>
+.search-bar-area,.ip-bar-area{
+    margin-top: 0px;
+    padding: .7em 0;
+}
+.ip-bar input,.search-bar input{
+    background: rgba(244,244,244,0.6);
+    border: none;
+    font-size: 14px;
+    color: #909090;
+    border-right: none;
+    height: 37px;
+    padding: 0 10px 0 40px;
+    outline: none;
+    text-overflow: ellipsis;
+    border-radius: 2px 0px 0px 2px;
+    
+    width: 100%;
+}
+.ip-bar-btn,.search-bar-btn{
+    position: absolute;
+    right: 0;
+    transition: all .2s ease-out;
+    height: 37px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 25px;
+    width: 21%;
+}
+.ip-bar-btn button,.search-bar-btn button{
+    background: #2561c1 !important;
+    color: #fff;
+    transition: all .2s ease-out;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 25px;
+    font-size: 17px;
+    border-radius: 0 3px 3px 0 !important;
+    width: 100%;
+    font-weight: 400;
+}
+.ip-bar,.search-bar{
+    position: absolute;
+    background: white;
+    width: 76%;
+    color: #333;
+    border-radius: 2px 0px 0px 2px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 14px;
+}
+.ip-bar > i,.search-bar > i{
+    position: absolute;
+    top: 10px;
+    left: 1em;
+    color: #2561c1;
+    font-size: 1.3em;
+}
+.search-result{
+    background-color: #fff;
+    color: #000;
+    z-index: 9;
+    top: 35px;
+    box-shadow: 0px 2px 5px -2px rgba(0,0,0,.5);
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 0 0 2px 2px;
+    background: white;
+    display: none;
+    overflow: auto;
+}
+.search-title{
+    font-size: 13px;
+    padding: 12px 10px 4px;
+    color: #212121;
+    opacity: .54;
+    font-weight: 500;
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.search-result ul{
+    list-style: none;
+    overflow: auto;
+}
+.search-result ul li a{
+    color: #444;
+    border: none;
+    padding: 8px 10px 8px 10px !important;
+    line-height: 17px;
+    display: block;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600
+}
+.search-result>ul>li>a>span{
+
+}
+.search-result>ul>li>a>span:first-child{
+    color: #757575 !important;
+    font-weight: 400 !important;
+  
+  
+}
+.search-result>ul>li>a>span:last-child{
+    font-weight: 100!important;
+    color: #2561c0 !important;
+  
+}
+.srch-bar-title{
+    height: 4em;
+    border-bottom: 1px solid #f8f8f8;
+}
+.srch-bar-title:hover {
+    background:white!important;
+}
+.search-result li:hover {
+    background: #f8f8f8;
+   
+    /* background-color: #fff;
+    border-color: rgba(3,27,78,.1);
+    box-shadow: 0 2px 4px rgba(3,27,78,.06);
+    position: relative;
+    transform: scale(1.05);
+    z-index: 11; */
+
+}
+.search-result li{
+   
+    transform: scale(1);
+    transition: all .15s linear;
+  
+}
+.search-bar .fa.fa-circle-o-notch.fa-spin{
+    display: none;
+}
+</style>
+
+<div class="col-md-7">
+    <div class="search-bar-area">
+        <form id="search_bar_form"  method="POST">
+                <div class="search-bar">
+                        <i class="fa fa-search m-b-clr" aria-hidden="true" ></i>
+                        <i class="fa fa-circle-o-notch fa-spin" ></i>
+                    <input type="text" name="search_key"  id="search-box">
+                    <div class="search-result">
+                            
+                                <ul class="col-lg-12 m-v-0 p-h-0" id="auto-suggestion-trgt">
+                                        <li class="srch-bar-title"> <span class="col-lg-12 search-title">Trending</span></li> 
+                                        <li > <a href="#"  >Boots <span> in </span> <span> Book </span> </a> </li>
+                                        <li > <a href="#">levi's</a> </li>
+                                </ul>
+                           
+                    </div>
+                    
+                </div>
+                <div class="search-bar-btn">
+                    <button type="submit" class="m-btn"> Search</button>
+                </div>
+        </form>
+        
+        
+    </div>
+
+</div>
+<script>
+    $('#search_bar_form').submit(e => {
+       e.preventDefault();
+       var key = $("#search-box").val();
+       window.location.href = "/search/"+key;
+    })
+
+
+
+
+
+    $('#search-box').keyup(e => {
+        searchTheFlag(e.target.value)
+    })
+    $('#search-box').focusout(e => {
+    
+        $('.search-result').hide();
+        $('.search-bar .fa.fa-search').show();
+        $('.search-bar .fa.fa-circle-o-notch.fa-spin').hide();
+    })
+    $('.search-result').hover(e => {
+        $('.search-result').show();
+    })
+    $('#search-box,.search-result').focusin(e => {
+        $('.search-result').show();
+
+    })
+  
+    function searchTheFlag(key) {
+
+
+        $('.search-bar .fa.fa-search').hide();
+        $('.search-bar .fa.fa-circle-o-notch.fa-spin').show();
+       
+        if(key == ""){
+            $('.search-bar .fa.fa-search').show();
+            $('.search-bar .fa.fa-circle-o-notch.fa-spin').hide();
+            $('#auto-suggestion-trgt').html(
+                            `<li class="srch-bar-title"> <span class="col-lg-12 search-title">Trending</span></li> 
+                            <li > <a href="#">Boots <span> in </span> <span> Book </span> </a> </li>
+                            <li > <a href="#">levi's</a> </li>`);
+        }
+
+        $.ajax({
+                 url:"/search/autoSuggestion/"+key,
+                 type:"post",
+                 dataType:"text",
+                 success : (res)=>{
+                    // console.log('res :', res); 
+                    $("#auto-suggestion-trgt").html(res);
+                    
+                    if(res == ""){
+                     
+                    }
+                 }
+            })
+    }
+</script>

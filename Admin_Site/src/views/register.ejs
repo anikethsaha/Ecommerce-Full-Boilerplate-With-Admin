@@ -1,0 +1,81 @@
+<% include header %>
+
+
+<div class="w-full ">
+  <form method="post" action="/register" class="bg-white w-2/5   m-auto my-4 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <span class="text-xl text-green-dark">
+  </span>
+  <div class="mb-4">
+
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        Username
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        name="username" type="text" placeholder="Username">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        First Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        name="first_name" type="text" placeholder="First Name">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        Last Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        name="last_name" type="text" placeholder="last Name">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        Mobile Number
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        name="mobile" type="number" placeholder="Mobile number">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        Email
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        name="email" type="email" placeholder="email">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        Type
+      </label>
+      <select
+      required
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+        name="role_type">
+        <option value="">Please Select The Role Type</option>
+        <% if(isAdmin == true){ %>
+        <option value="super_admin">Super Admin</option>
+        <% } %>
+        <option value="Ccare">Ccare</option>
+      </select>
+    </div>
+    <div class="mb-6">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
+        Password
+      </label>
+      <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline"
+        name="password" type="password" placeholder="******************">
+
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="rounded shadow bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center"
+        type="submit">
+        Sign Up
+      </button>
+      <a href="/login" class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="#">
+        login
+      </a>
+    </div>
+  </form>
+
+</div>
+
+
+<% include footer %>

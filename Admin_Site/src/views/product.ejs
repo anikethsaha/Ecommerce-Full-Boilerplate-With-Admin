@@ -1,0 +1,98 @@
+<% include header %>
+<div class="w-5/6 m-auto my-4">
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post"  enctype="multipart/form-data"  action="/add/product/">
+    <div class="mb-4">
+
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        name
+      </label>
+      <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="name">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="metaData">
+        metaData
+      </label>
+      <textarea name="metaData" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+      type="text"
+      style ="    height: 112px;"
+       placeholder=
+       "{
+      author : 'R.K.Rowling'
+ }  "></textarea>
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="category">
+        Category - Like Book,Shoe
+      </label>
+      <input name="category" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="category">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="subCategory">
+        Sub Category - like fiction , comedy
+      </label>
+      <input name="subCategory" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="subCategory">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="price">
+        price
+      </label>
+      <input name="price" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="number" placeholder="price">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="old_price">
+        Old Price (If Any)
+      </label>
+      <input name="old_price" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Old Price">
+    </div>
+<div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="description">
+        description
+      </label>
+      <textarea name="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="description"></textarea>
+    </div>
+<div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="_vendorID">
+        _vendorID
+      </label>
+      <input name="_vendorID" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="_vendorID">
+    </div>
+
+
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="termsAndConditions">
+        Terms And Conditions About the product
+      </label>
+      <textarea name="termsAndConditions" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="termsAndConditions"></textarea>
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="highlights">
+        highlights  - Seperate by comma - mainly like points
+      </label>
+      <textarea name="highlights" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="highlights"></textarea>
+    </div>
+
+
+
+
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="pro_images">
+        images - max : 6 - upload either 3 or 6 images
+      </label>
+      <input name="pro_images" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="file" placeholder="images"  multiple="multiple">
+    </div>
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="QualityType">
+        QualityType -  Old or New  (Default id New)
+      </label>
+      <input name="QualityType"  class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="QualityType">
+    </div>
+    <div class="flex items-center justify-between">
+      <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+       Add
+      </button>
+
+    </div>
+  </form>
+
+
+  <% include footer %>

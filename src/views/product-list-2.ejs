@@ -1,0 +1,102 @@
+
+
+<% include layouts/header %>
+
+
+
+
+<div class="alignment-container" style="padding:3em 0 ">
+    <div class="col-md-12">
+        <div class="product-content-div">
+            <h1 class="heading sml-spn">
+                <%= category %> 
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <%= subCategory %> 
+            </h1>
+            <span class="sml-spn"><%= count %> Products</span></h1>
+            <div class="row" id="loop">
+
+            </div>
+            <div class="row" id="dummy-t">
+
+                 <div class="col-md-3">
+                    <div class="product-details">
+                        <div class="dummy container"></div>
+                        <div class="dummy line"></div>
+                        <div class="dummy line"></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-details">
+                        <div class="dummy container"></div>
+                        <div class="dummy line"></div>
+                        <div class="dummy line"></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-details">
+                        <div class="dummy container"></div>
+                        <div class="dummy line"></div>
+                        <div class="dummy line"></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-details">
+                        <div class="dummy container"></div>
+                        <div class="dummy line"></div>
+                        <div class="dummy line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $(window).load((e) => {
+         window.count = 0;
+
+         productFetchwithSubCategory();
+
+    })
+
+
+    $(window).scroll((e) => {
+
+        if($(window).scrollTop() >= $(document).height() - $(window).height() - 10){
+            console.log("fetching" )
+            productFetchwithSubCategory();
+        }
+
+    })
+
+    function productFetchwithSubCategory(){
+            const category = '<%= category %>';
+            const subCategory = '<%= subCategory %>';
+
+            
+            const totalProductAvailable = "<%= count %>";
+             count = count  + 4;
+            console.log(count);
+            if(totalProductAvailable <= count){
+                $('#dummy-t').hide();
+            }else{
+                 $.ajax({
+                 url:"/product/"+category+"/"+subCategory+"/"+count+"/get",
+                 type:"post",
+                 dataType:"text",
+                 success : (res)=>{
+                    
+                    $("#loop").append(res);
+
+                 }
+                 })
+            }
+
+    }
+
+</script>
+
+<% include layouts/script-footer %>

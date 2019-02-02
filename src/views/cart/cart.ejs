@@ -1,0 +1,193 @@
+
+<% include layouts/header %>
+<div class="container-fluid bg-2" >
+        <div class="row center-top">
+           
+            <div class="col-md-1"></div>
+            <div class="col-md-6 m-box-shadow-full p-h-0">       
+                <div class="">
+                    <div class="item-summary-div" id="cart-item-target">
+                        <div class="dummy-div">
+                                <div class="dummy line"></div>
+                                <div class="dummy line"></div>
+                                <div class="dummy line"></div>
+                            </div>
+                    </div>                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="center-top">
+                    <div class="payment-summary-div">
+                        <div class="col-md-12 ">
+                            <span class="med-heading col-md-12">Payment Summary</span>
+                        </div>
+                       
+                        <div class="bill-sum" id="cart-bill-target">
+                            <div class="dummy-div">
+                                <div class="dummy line"></div>
+                                <div class="dummy line"></div>
+                                <div class="dummy line"></div>
+                            </div>
+                            
+                                
+                        </div>
+                        <div class="col-md-12">
+                           <form action="/cart/address" method="POST">
+                                <input type="hidden" name="_c_i_d"  value="<%= cartDetails._id %>">
+                              <button type="submit" class="col-md-12 m-btn btn m-half-auto blue-btn txt-upr"> Checkout</button>
+                           </form> 
+                            <a href="/" class="col-md-12 m-btn btn m-half-auto white-btn txt-upr">
+                                <span class="m-auto-half"> <i class="fa fa-arrow-left" aria-hidden="true"></i> </span> 
+                                  Continue Shopping
+                            </a>
+                          
+                        </div>
+                    </div>
+                </div>
+           
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    
+    </div>
+    
+<script>
+    $(window).load(async e => {
+        await loadCartItemSummary();
+        await loadCartBillSummary()
+    })
+    async  function loadCartBillSummary(){
+        var cost = "<%= cartDetails.cost%>"
+        var shippingCharges = 50;
+       
+        if(cost > 999){
+            shippingCharges = 0
+        } 
+        var output = await  `
+        <div class="col-md-12 sub-bill">
+                                    <span class="col-md-6">Each Product Cost</span>
+                                    <span class="col-md-4"></span>
+                                    <span class="col-md-2"><%= cartDetails.cost %></span>
+                                </div>
+                                <div class="col-md-12 sub-bill">
+                                    <span class="col-md-6">Shipping Cost</span>
+                                    <span class="col-md-4"></span>
+                                    <span class="col-md-2">${shippingCharges}</span>
+                                </div>
+                            
+                                <div class="col-md-12 total-bill ">
+                                        <span class="col-md-6">Total</span>
+                                        <span class="col-md-4"></span>
+                                        <span class="col-md-2">${parseInt(cost) + parseInt(shippingCharges)}</span>
+                                </div>
+        `;
+        $('#cart-bill-target').html(output)
+    }
+
+    async  function loadCartItemSummary(){
+     var output = await  `
+     <div class="col-md-12 p-h-0 bg-light-blue">
+                            <span class="med-heading col-md-12  m-title-brdr">CART SUMMARY</span>
+                        </div>
+                        <% cartDetails._productIDArray.forEach((product,i) => { %>
+                            <div class="col-md-12 m-half-auto p-h-0 brdr-btm p-2 ">  
+                                    <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <img src="http://localhost:8000/images/product-img/<%= product.images[0] %>" alt="" srcset="">
+                                            </div>
+                                    <div class="col-md-9 p-h-0">
+                                        <div class="col-md-9 p-h-0 item-sum">
+                                            <a class="col-md-12" href="/show/product/<%= product._id %>"> <%= product.name %> </a>
+                                            <span class="col-md-5 item-sum-k">Sold By:</span>  <span class="col-md-7">Setu E-tail Pvt Ltd</span>
+                                            <span class="col-md-5 item-sum-k">Sold By:</span>  <span class="col-md-7">Setu E-tail Pvt Ltd</span>
+                                            <span class="col-md-12">
+                                                <span class=" cart-item-action col-md-4 m-half-auto m-border-full p-h-0">
+                                                    <i onclick="removeProduct('<%= product._id %>',<%= product.price %>)"  class="fa fa-trash-o"></i>
+                                                    <% if(cartDetails.quantityArray[i] > 1){ %>
+                                                            <i onclick="decreaseQuantity('<%= product._id %>',<%= product.price %>)" class="fa fa-minus" aria-hidden="true"></i>
+                                                    <% } %>
+                                                   
+                                                    <span class="p-h-0"> <%= cartDetails.quantityArray[i] %> </span>
+                                                    <i onclick="increaseQuantity('<%= product._id %>',<%= product.price %>)" class="fa fa-plus" aria-hidden="true"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-3 text-rt p-h-0 line-ht-big">
+                                            <div class="col-md-12 p-h-0">
+                                                    <img class="icon-svg sh" src="/images/icon/rupee-indian.svg" alt="">
+                                                    <span class="price-span "> <%= product.price %> </span>
+                                            </div>
+                                            
+                                            <a href="#"  class="col-md-12 blck-txt p-h-0 m-half-auto">Return policy</a>
+                                        </div>
+                                
+                                    </div>
+                                 </div>
+                            </div>
+                        <% }) %>`;
+        $('#cart-item-target').html(output);
+
+}
+function removeProduct(pid,price){
+    console.log('pid :', pid);
+    $.ajax({
+        url:"/cart/update/remove",
+        type:"post",
+        data : {
+            pid,
+            _cartID : "<%= cartDetails._id %>",
+            price
+        },
+        dataType:"text",
+        success : (res)=>{
+        console.log('res :', res);
+        location.reload()
+        }
+    })   
+
+
+
+}
+function decreaseQuantity(pid,price){
+    console.log('pid :', pid);
+    $.ajax({
+        url:"/cart/update/decrease",
+        type:"post",
+        data : {
+            pid,
+            _cartID : "<%= cartDetails._id %>",
+            price
+        },
+        dataType:"text",
+        success : (res)=>{
+        console.log('res :', res);
+        location.reload()
+        }
+    })   
+}
+function increaseQuantity(pid,price){
+    console.log('pid :', pid);
+    $.ajax({
+        url:"/cart/update/increase",
+        type:"post",
+        data : {
+            pid,
+            _cartID : "<%= cartDetails._id %>",
+            price
+        },
+        dataType:"text",
+        success : (res)=>{
+        console.log('res :', res);
+        location.reload()
+        }
+    })   
+}
+</script>
+
+
+
+
+
+
+
+<% include layouts/footer %>

@@ -1,0 +1,219 @@
+<% include layouts/header %>
+
+<div class="container-fluid bg-2">
+    <div class="row center-top">
+        <div class="col-md-12">
+
+            <div class="container-fluid ">
+                <div class="steps-indicator">
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step"> <i class="fa fa-check green-check" aria-hidden="true"></i>
+                            Address</label>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step "> <i class="fa fa-check green-check" aria-hidden="true"></i>Review
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="mid-label step inactive-step"> <i class="fa fa-check green-check" aria-hidden="true"></i>Payment</label>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="line-seperator"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="mid-label step a m-shadow"> <i class="fa fa-check green-check" aria-hidden="true"></i>
+                            Done</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <span class="med-heading col-md-12" style="font-family: monospace;">RECIEPT</span>
+                <div class="col-md-12">
+                    <div class="m-card m-top-line p-1 col-lg-12">
+                        <figure class="rcpt-cost">&#x20b9;
+                            <%= orderDetails[0].cost %>
+                        </figure>
+                        <div>
+                            <div class="col-md-12 p-h-0 m-half-auto d-tl-sum">
+                                <span class="col-md-12 p-h-0 d-tl-title">
+                                    <i class="fa fa-check " aria-hidden="true"></i>
+                                    Succesfully Place Order
+                                </span>
+                                <span class="col-md-12 p-h-0 d-tl-time">
+                                    <%= orderDetails[0].createdAt %>
+                                </span>
+                            </div>
+                            <div class="col-md-12 p-h-0 m-half-auto d-tl-sum">
+                                <span class="col-md-12 p-h-0 d-tl-title">
+                                    <i class="fa fa-check " aria-hidden="true"></i>
+                                    Payment Succeeded
+                                </span>
+                                <span class="col-md-12 p-h-0 d-tl-time">
+                                    <%= orderDetails[0].updatedAt %>
+                                </span>
+                            </div>
+                            <div class="col-md-12 p-h-0 m-half-auto d-tl-sum">
+                                <span class="col-md-12 p-h-0 d-tl-title">
+                                    <i class="fa fa-check " aria-hidden="true"></i>
+                                    Order Ready For Dispatch
+                                </span>
+                                <span class="col-md-12 p-h-0 d-tl-time">
+                                    Today
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rcpt-pay-sum col-md-12 p-h-0">
+                            <span class="col-md-12 p-h-0 rcpt-title">Payment Details</span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">ID</span>
+                                <span class="col-md-6">
+                                    <%= transactionDetails.id %></span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">method</span>
+                                <span class="col-md-6">
+                                    <%= transactionDetails.method %></span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">status</span>
+                                <span class="col-md-6">
+                                    <%= transactionDetails.status %></span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">email</span>
+                                <span class="col-md-6">
+                                    <%= transactionDetails.email %></span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">contact</span>
+                                <span class="col-md-6">
+                                    <%= transactionDetails.contact %></span>
+                            </span>
+                        </div>
+                        <div class="rcpt-pay-sum col-md-12 p-h-0 m-half-auto">
+                            <span class="col-md-12 p-h-0  rcpt-title">
+                                <% if( typeof orderDetails[0]._productID == 'undefined'){ %>
+                                Cart Details
+                                <% }else{ %>
+                                Product Details
+                                <% } %>
+                            </span>
+                            <% if( typeof orderDetails[0]._productID == 'undefined'){ %>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">CART ID</span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._completedCartID._id %>
+                                </span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">Cart Status</span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._completedCartID.status %>
+                                </span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6"><strong>Products ID </strong> </span>
+                                <span class="col-md-6"> <strong>Quantity</strong> </span>
+                            </span>
+
+                            <% orderDetails[0]._completedCartID._productIDArray.forEach((product,i) => { %>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6"><a href="/show/product/<%= product %>">
+                                        <%= product %></a> </span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._completedCartID.quantityArray[i] %></span>
+                            </span>
+                            <% }) %>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">Cart Cost</span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._completedCartID.cost %>
+                                </span>
+                            </span>
+
+
+
+
+                            <% }else{ %>
+
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">Product ID</span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._productID._id %>
+                                </span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">
+                                    <img style=" width:5rem;" src="/images/product-img/<%= orderDetails[0]._productID.images[0] %>"
+                                        alt="">
+                                </span>
+                                <span class="col-md-6">
+                                    <a href="/show/product/<%= orderDetails[0]._productID._id %>">
+                                        <%= orderDetails[0]._productID.name %></a>
+                                </span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">
+                                    Price
+                                </span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._productID.price %>
+                                </span>
+                            </span>
+
+                            <% } %>
+
+
+                        </div>
+                        <div class="rcpt-pay-sum col-md-12 p-h-0 m-half-auto">
+                            <span class="col-md-12 p-h-0  rcpt-title">Order Details</span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">Order ID</span>
+                                <span class="col-md-6">
+                                    <%= orderDetails[0]._id %></span>
+                            </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <span class="col-md-6">Delivery Date</span>
+                                <span class="col-md-6">Within 5 Working Days</span>
+                            </span>
+
+                        </div>
+                        <div class="rcpt-pay-sum col-md-12 p-h-0 m-half-auto">
+                            <span class="col-md-12 p-h-0  rcpt-title">Help Desk </span>
+                            <span class="col-md-2 p-h-0 rcpt-btn"><i class="fa fa-remove" aria-hidden="true"></i> <a
+                                    href="">Cancel Order</a> </span>
+                            <span class="col-md-2 p-h-0 rcpt-btn"><i class="fa fa-map-marker" aria-hidden="true" style="color: orange"></i></i>
+                                <a href="" style="color: orange">Track</a> </span>
+                            <span class="col-md-12 p-h-0 d-tl-sum rcpt-pay-body">
+                                <p class="col-md-12 p-h-0">Standards is a tough problem because once again, they have
+                                    to be formed via consensus. In general I think that standards in this space will
+                                    take many years to be settled upon because a lot of the current experiments are
+                                    going to fail. It's only after many of the current networks have failed will there
+                                    be sufficient faith in the robustness of those that survived that we can then
+                                    expect them to become standards. </p>
+
+                            </span>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<% include layouts/footer %>

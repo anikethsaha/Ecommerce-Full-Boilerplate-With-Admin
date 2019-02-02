@@ -1,0 +1,111 @@
+<% include layouts/header %>
+<div class="container-fluid bg-2">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 center-top">
+            <div class="m-card-panel">
+
+                    <span class="med-heading col-md-12 m-half-auto" style="text-align: center;" >Register</span>
+
+                 <% if(typeof errors !== 'undefined'){ %>
+                    <ul>
+                    <% Object.keys(errors).forEach(err =>{ %>
+                        <li class="para error-li" ><%= err.msg %></li>
+                    <%  }) %>
+                    </ul>
+                <% } %>
+                <br>
+                <% if(typeof successMessage !== 'undefined'){ %>
+
+                    <ul>
+                        <li class="para success-li" ><%= successMessage %><a href="/auth/login"> here </a></li>
+                    </ul>
+                <% } %>
+                <br>
+                <% if(typeof PasswordMatchederrors !== 'undefined'){ %>
+                    <ul>
+                        <li class="para error-li" ><%= PasswordMatchederrors %></li>
+                    </ul>
+                <% } %>
+
+                   <% if(typeof requiredTestErrors !== 'undefined'){ %>
+                    <ul>
+                        <% requiredTestErrors.forEach((err,i) => { %>
+                            <li class="para error-li" ><%= err %></li>
+                        <% }) %>
+
+                    </ul>
+                <% } %>
+
+                    <% if(typeof optionalTestErrors !== 'undefined'){ %>
+                    <ul>
+                        <% optionalTestErrors.forEach(err => { %>
+                            <li class="para error-li" ><%= err %></li>
+                        <% }) %>
+
+                    </ul>
+                    <% } %>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="/auth/register">
+                        <ul>
+
+                        </ul>
+
+                        <div class="form-group ">
+                            <label for="name" class="col-md-4 control-label">Name</label>
+
+                            <div class="col-md-8">
+                                <input id="name" type="text" class="m-input col-md-12" name="name"  required autofocus>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-8">
+                                <input id="email" type="email" class="m-input col-md-12" name="email" required>
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="mobile" class="col-md-4 control-label">Enter Your Mobile Number</label>
+
+                            <div class="col-md-8">
+                                <input id="mobile" type="number" class="m-input col-md-12" name="mobile" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-8">
+                                <input id="password" type="password" class="m-input col-md-12" name="password"  required>
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-8">
+                                <input id="password-confirm" type="password" class="m-input col-md-12" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="m-btn blue-btn col-md-12">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+<% include layouts/footer %>

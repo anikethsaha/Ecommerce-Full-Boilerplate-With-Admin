@@ -1,0 +1,27 @@
+<% include layouts/header %>
+<div class="container-fluid bg-2">
+    <div class="row center-top">
+        <div class="alignment-container" style="padding:3em 0;height:20em; ">
+            <div class="col-md-12">
+                <div class="product-content-div" style="text-align:center;" id="community_text">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $.ajax({
+        url: "/show/banners/community",
+        type: "get",
+        success: (res) => {
+            $('#community_text').html(res[0].banner_text)
+        }
+    })
+</script>
+
+
+<% include layouts/footer %>

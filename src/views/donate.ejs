@@ -1,0 +1,31 @@
+<% include layouts/header %>
+
+<div class="container-fluid bg-2 " >
+    <div class="row center-top">
+
+        <div class="col-md-12">
+            <div class="sm-aj-handler">
+                <div class="product-content-div" style="text-align:center;" id="donate_text">
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+</div>
+
+
+<script>
+
+$.ajax({
+    url:"/show/banners/donate",
+    type:"get",
+    success :(res)=>{
+        $('#donate_text').html(res[0].banner_text)
+    }
+})
+</script>
+
+
+<% include layouts/footer %>

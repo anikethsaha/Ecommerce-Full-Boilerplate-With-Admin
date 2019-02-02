@@ -1,0 +1,365 @@
+<style>
+.single-product-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.single-product-wrapper .product-description {
+    position: relative;
+    z-index: 1;
+    padding-top: 25px;
+}
+.single-product-wrapper .product-description span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #787878;
+    margin-bottom: 15px;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+}
+.single-product-wrapper .product-description h6 {
+    color: #222222;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+.single-product-wrapper .product-description p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    color: #000000;
+}
+a {
+    -webkit-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+    text-decoration: none;
+    outline: 0 solid transparent;
+    color: #000000;
+    font-weight: 600;
+    font-size: 12px;
+}
+.single-product-wrapper .product-img .product-badge {
+    height: 25px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 0 10px;
+    display: inline-block;
+    line-height: 25px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.single-product-wrapper .product-img {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height:20em;
+    height: 20em;
+}
+.single-product-wrapper .product-img img{
+    height: 100%;
+
+}
+
+.single-product-wrapper .product-description .hover-content {
+    position: absolute;
+    width: calc(100% - 40px);
+    top: -70px;
+    left: 20px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.product-favourite{
+    font-size: 1em;
+}
+.product-description .box-compact{
+    margin: 0 1%;
+    margin-right: 0;
+}
+.tb{
+    font-weight: 600;
+}
+.owl-next,.owl-prev{
+    position: absolute;
+            top: 40%;
+
+            padding: 1em;
+            font-size: 1.4em;
+            font-weight: 700;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+}
+.owl-next{
+    right: 0;
+}
+.owl-prev{
+    left: 0;
+}
+.p-4{
+    padding: 4em;
+}
+.p-2{
+    padding: 2em
+}
+.carousel-mover-handler {
+    position: absolute;
+    top: 40%;
+    z-index: 99;
+    width: 2em;
+}
+</style>
+
+
+
+  <!-- ##### New Arrivals Area Start ##### -->
+    <section class="new_arrivals_area section-padding-80 clearfix">
+        <div class="container p-2">
+            <div class="row">
+                <div class="col-12">
+                    <div class=" container-head g">
+                        <h2>Popular Products</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="popular-products-slides owl-carousel">
+
+                        <!-- Single Product -->
+                        <div class="single-product-wrapper" id="pop_product_1" >
+                            <!-- Product Image -->
+                            <a href="#">
+                            <div class="product-img">
+
+                                <img class="active-img" src="/images/website-img/preload.jpg" alt="">
+                                                           <!-- Favourite -->
+
+                            </div>
+                            <!-- Product Description -->
+                            <div class="product-description">
+                                <span>LOADING...</span>
+                                <a href="#">
+                                    <h6>LOADING....</h6>
+                                </a>
+                                 <div class=" box-compact">
+                                    <div class="cost">
+
+                                        <span class="small-para tb">LOADING</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                             </a>
+                        </div>
+
+                        <!-- Single Product -->
+                        <div class="single-product-wrapper" id="pop_product_2">
+                            <!-- Product Image -->
+                           <a href="#">
+                           <div class="product-img">
+
+                                    <img class="active-img" src="/images/website-img/preload.jpg" alt="">
+                                                    <!-- Favourite -->
+
+                            </div>
+                            <!-- Product Description -->
+                            <div class="product-description">
+                                <span>LOADING...</span>
+                                <a href="#">
+                                    <h6>LOADING....</h6>
+                                </a>
+
+
+                                <!-- Hover Content -->
+                                 <div class=" box-compact">
+                                    <div class="cost">
+
+                                        <span class="small-para tb">LOADING</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            </a>
+                        </div>
+
+
+
+
+                        <div class="single-product-wrapper" id="pop_product_0">
+                        <!-- Product Image -->
+                            <a href="#">
+                                <div class="product-img">
+
+                                <img class="active-img" src="/images/website-img/preload.jpg" alt="">
+
+                                </div>
+                            <!-- Product Description -->
+                                <div class="product-description">
+                                    <span>LOADING...</span>
+                                    <a href="#">
+                                        <h6>LOADING....</h6>
+                                    </a>
+
+
+                                    <!-- Hover Content -->
+                                    <div class=" box-compact">
+                                        <div class="cost">
+
+                                            <span class="small-para tb">LOADING</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+
+
+
+                        <div class="single-product-wrapper" id="pop_product_4">
+                        <!-- Product Image -->
+                            <a href="#">
+                                <div class="product-img">
+
+                                <img class="active-img" src="/images/website-img/preload.jpg" alt="">
+
+                                </div>
+                            <!-- Product Description -->
+                                <div class="product-description">
+                                    <span>LOADING...</span>
+                                    <a href="#">
+                                        <h6>LOADING....</h6>
+                                    </a>
+
+
+                                    <!-- Hover Content -->
+                                    <div class=" box-compact">
+                                        <div class="cost">
+
+                                            <span class="small-para tb">LOADING</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="single-product-wrapper" id="pop_product_5">
+                        <!-- Product Image -->
+                            <a href="#">
+                                <div class="product-img">
+
+                                <img class="active-img" src="/images/website-img/preload.jpg" alt="">
+
+                                </div>
+                            <!-- Product Description -->
+                                <div class="product-description">
+                                    <span>LOADING...</span>
+                                    <a href="#">
+                                        <h6>LOADING....</h6>
+                                    </a>
+
+
+                                    <!-- Hover Content -->
+                                    <div class=" box-compact">
+                                        <div class="cost">
+
+                                            <span class="small-para tb">LOADING</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+
+
+
+                        <!-- Single Product -->
+                        <div class="single-product-wrapper" id="pop_product_3">
+                            <!-- Product Image -->
+                            <a href="#">
+                                <div class="product-img">
+
+                                <img class="active-img" src="/images/website-img/preload.jpg" alt="">
+
+                                </div>
+                            <!-- Product Description -->
+                                <div class="product-description">
+                                    <span>LOADING...</span>
+                                    <a href="#">
+                                        <h6>LOADING....</h6>
+                                    </a>
+
+                                    <!-- Hover Content -->
+                                    <div class=" box-compact">
+                                        <div class="cost">
+
+                                            <span class="small-para tb">LOADING</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Single Product -->
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### New Arrivals Area End ##### -->
+
+
+
+    <script>
+    $.ajax({
+        url:"/show/banners/pop_product",
+        type:"get",
+        success : (res) => {
+        for(let i = 0 ;i<res.length;i++){
+        $(`#pop_product_${i} > a`)
+        .attr('href',`/show/product/${res[i].banner_name_link}`);
+
+        $(`#pop_product_${i} .product-description > a`)
+        .attr('href',`/show/product/${res[i].banner_name_link}`);
+
+
+        $(`#pop_product_${i} .product-img img`)
+        .attr('src',`/images/website-img/${res[i].banner_name_img}`)
+        $(`#pop_product_${i} .product-description span`).html(res[i].subCategory)
+        $(`#pop_product_${i} .product-description a h6`).html(res[i].name)
+        $(`#pop_product_${i} .box-compact .cost .small-para.tb`).html("&#8377 "+res[i].price)
+
+            }
+        }
+    })
+    </script>

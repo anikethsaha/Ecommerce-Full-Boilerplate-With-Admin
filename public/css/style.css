@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top-head{
+    top: 0;
+    width: 100%;
+    background: #f7f7f7;
+    height: 1em;
+    padding: 5px 0%;
+    color: white;
+}
+.nav-div{
+    float: right;
+    white-space: nowrap;
+}
+.nav-div span a{
+    font-size: 1.2rem;
+    color: #828282;
+    text-decoration: none;
+    margin: 0 7px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.6rem;
+    display: inline-block;
+    vertical-align: top;
+}
+.nav-div span{
+    /* border-left: 2px solid #828282; */
+    /* margin: .5em; */
+}

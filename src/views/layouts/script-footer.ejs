@@ -1,0 +1,94 @@
+
+<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
+ <script src="/js/bootstrap.js"></script>
+ <script src="/js/frontss.js"></script>
+ <script src="/js/plugins.js"></script>
+ <script src="/js/active.js"></script>
+ <script src="/js/owl.carousel.js"></script>
+ <script src="/js/owl.lazyload.js"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5bfe7f0d79ed6453ccab85f5/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+ </body>
+
+
+
+   <script src="/js/locationHandling.js"></script>
+   <script src="/js/toastr.min.js"></script>
+   <script>
+
+            const checkCart = ()=>{
+                $.ajax({
+                 url:"/cart/check",
+                 type:"get",
+                 dataType:"text",
+                 success : (res)=>{
+                    res = JSON.parse(res)
+
+                    if(res == null || res.length == 0 || res == '[]' ){
+                        $('#c-bdge').html(0)
+                    }else{
+                        $('#c-bdge').html(res[0].numberOfItem)
+                    }
+
+                 }
+                 })
+            }
+
+
+
+            checkCart();
+
+
+
+            if(typeof errors !== undefined) {
+                Object.keys(errors).forEach(err => {
+                toastr.success(err, null)
+             })}
+
+   </script>
+   <script type="text/javascript"
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8BrmWjoDYxC5k6PTRe4hPB4LyiFu6pq8&libraries=places&callback=activatePlacesSearch&region=IN"></script>
+<script>
+
+
+
+    $(document).on('scroll',(e)=>{
+        if( $(window).scrollTop() > 75 && $(window).innerWidth() > 500){
+            $('.navbar.navbar-default.navbar-fixed-top').css({'transform': 'translateY(-7em)'});
+            $('.lower-header').css({'position':'fixed','top':"0px"})
+        }else{
+           $('.navbar.navbar-default.navbar-fixed-top').css({'transform': 'translateY(0px)'});
+           $('.lower-header').css({'position':'relative','top':"0px"})
+
+        }
+    })
+</script>
+
+
+
+
+
+<!-- <a href="https://icons8.com">Icon pack by Icons8</a><a href="https://icons8.com">Icon pack by Icons8</a> -->
+<!-- <a href='https://www.freepik.com/free-vector/illustration-of-logistics-service-vector-set_3098975.htm'>Designed by Rawpixel.com</a> -->
+<script>
+  $('#left-m-hndlr').on('click',e => {
+
+    $('.left-sub-menu').toggleClass('slide-rt');
+    $('body').toggleClass('no-scroll');
+  })
+   $('.active-img').on('hover',(e)=>{
+
+   })
+</script>

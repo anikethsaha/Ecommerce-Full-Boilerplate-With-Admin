@@ -1,0 +1,257 @@
+html{
+  background-color: white;
+}
+.bg-1 {
+
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 90%;
+  margin: auto;
+}
+.container{
+  padding-left: 0px;
+}
+.bg-2{
+  /* background-image: url("/images/pattern.png");  */
+  background-position: center;
+  background:white;
+  opacity: 1;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+.bg-3{
+    margin-right: 0px;
+  padding-top: 15px;
+
+}
+.modal-dialog{
+  color: black;
+}
+.navbar{
+  background-color: white;
+}
+
+.logo{
+  float: left;
+  padding-top: 5px;
+
+}
+.navbar-nav{
+
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  float: right;
+  font-size: .8em;
+}
+.sel i {
+  display: none;
+}
+.sel{
+  background-color: #efad59;
+  padding: 0px;
+  margin: auto;
+  color: white;
+  font-size: 1.2em;
+
+}
+
+.add-to-cart {
+    border: 1px solid #8cc152;
+    padding: 4px 14px;
+    background-color: #fff;
+    color: #8cc152;
+    text-transform: uppercase;
+    float: right;
+    margin: 5px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+.view{
+  color: #8cc152;
+  padding: 10px 2px;
+}
+.menuselection{
+  margin: 4px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover, .nav-tabs > li.active > a:focus{
+  background-color: #8cc152;
+  color: white;
+  font-family: "Lato";
+  font-weight: 700;
+}
+.nav-tabs > li > a{
+  color: white;
+}
+li.sel.active > a > i{
+  display: inline-block;
+}
+.nav.nav-tabs{
+  margin: 0% 10% 0% 10%;
+  padding-left: 26%;
+  padding-right: 20%;
+}
+#save{
+  background: rgb(6, 226, 6);
+  color: white;
+}
+.thumbnail > img{
+  height: 150px;
+  width: 250px;
+  max-height: 100%;
+  max-width: 100%;
+}
+.menu-head{
+  border-bottom: 1px solid black;
+  font-size: 1.3em;
+}
+.menu-img{
+  height: 150px;
+  width: 200px;
+  margin: 0px;
+}
+.btn-success{
+  margin: 0 18px 0 15px;
+}
+.menu-img img{
+  height: 100%;
+  width: 100%;
+}
+.cartContent p{
+  display: inline-block;
+  width: 65%;
+}
+.cartCheckout{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.table > tbody > tr > td{
+  padding-top: 25px;
+  padding-bottom: 12px;
+}
+/*#bf, #lun, #din, #io {
+  padding-top: 3px;
+  margin-top: 10px;
+}*/
+.subtotal , .totalAmt{
+  font-size: 1.3em;
+}
+.check{
+  display: inline-block;
+}
+.ui-datepicker{
+  background-color: #fff;
+    border: 1px solid #9fa8bc;
+    border-radius: 2px;
+    margin: 1px 0 0;
+    padding: 10px;
+    width: auto
+}
+.ui-datepicker-title{
+  text-align: center;
+  border-bottom: 1px solid black;
+
+}
+.ui-datepicker-unselectable span{
+  opacity: 0.5;
+  border: 1px solid red;
+}
+.ui-datepicker-prev{
+  float: left;
+}
+.ui-datepicker-next{
+  float: right;
+}
+.ui-state-default{
+      background-color: #f6f7f8;
+    border: 0 none;
+    border-radius: 1px;
+    color: #696c74;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 6px 10px;
+    transition: all 0.2s ease-out 0s;
+}
+#filter-container{
+  font-size: 1.2em;
+  max-width: 200px;
+  min-height: 300px;
+  padding-right: 10px;
+  padding-left: 20px;
+
+  margin-bottom: 20px;
+  background-color: white;
+  float: left;
+  width: 200px;
+  background: #fff;
+  box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.1);
+  border-radius: 0;
+  margin-right: 0px;
+  position: relative;
+}
+.vendor-container{
+  width: 500px;
+  min-width: 400px;
+  max-width: 900px;
+  margin-right: 200px;
+  float: right;
+}
+.vendor{
+  width: 100%;
+  margin-right: 90%;
+  text-align: center;
+}
+input[type=checkbox] {
+    height: 13px !important;
+    position: relative;
+    top: 2px;
+    line-height: normal;
+    margin-right: 6px;
+    box-sizing:border-box;
+    padding :0;
+
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+img:hover{
+  opacity: 0.3;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Lato";
+}
+header{
+  border-bottom: 5px solid rgba(0,0,0,0.3);
+}
+#content {
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding-top: 10%;
+  text-shadow:  0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 5em;
+}
+
+#content hr {
+  width: 400px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+#promovalue{
+  width: 70%;
+}

@@ -1,0 +1,71 @@
+<% include layouts/header %>
+<style>
+
+</style>
+
+<section class=" wrapper-md animated fadeInUp">
+    <div class="container-fluid bg-2 aside-xxl">
+        <div class="">
+            <section class="login-panel m-card-panel center-top">
+
+                <header class=" login-head">
+                    <h3> Login</h3>
+                    <span class="social-login-head col-md-12">or <a href="/auth/register">Register</a></span>
+                </header>
+
+
+
+                <form method="POST" action="/auth/login" class="panel-body wrapper-lg">
+
+
+                    <div class="">
+                        <label class="control-label">Email Address</label>
+
+                        <input type="text" name="email" placeholder="Enter email. address">
+                    </div>
+                    <div class="">
+                        <label class="control-label">Password</label>
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+
+                    <button type="submit" class="m-shadow">Sign IN</button>
+                </form>
+
+
+                <span class="social-login-head col-md-12" style="margin-bottom:.5rem;">
+                        Forgot Password ?
+                    <a href="/auth/reset_password">
+                        Click Here
+                    </a>
+
+                </span>
+                <span class="social-login-head col-md-12">
+                    or connect with
+                    <a href="/auth/facebook">
+                        FACEBOOK
+                    </a>
+                    OR
+                    <a href="/auth/google">
+                        GOOGLE
+                    </a>
+                </span>
+                <!-- <div class="social-btn">
+                    <a href="/auth/facebook">
+                        <img src="/images/fb-btn.png" alt="">
+                    </a>
+                    <a href="/auth/google">
+                        <img src="/images/google-btn.png" alt="">
+                    </a>
+                </div> -->
+
+            </section>
+
+        </div>
+
+        <script>
+
+        </script>
+    </div>
+</section>
+
+<% include layouts/footer %>
