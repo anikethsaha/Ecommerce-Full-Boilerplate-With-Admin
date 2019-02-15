@@ -10,7 +10,9 @@ const sanitizeBody = require('express-validator/filter');
 const passport = require('passport')
 const {
   port,
-  sessionSecretKey
+  sessionSecretKey,
+  productImageSavingLocation,
+  websiteImageSavingLocation
 } = require('./config')
 const path = require('path')
 var csrf = require('csurf');
@@ -19,11 +21,11 @@ var multer = require('multer')
 var cookieParser = require('cookie-parser')
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    if (file.fieldname == "pro_images") {
+     if (file.fieldname == "pro_images") {
       console.log("working somehting");
-      cb(null, '../public/images/product-img/')
+      cb(null, productImageSavingLocation)
     } else {
-      cb(null, '../public/images/website-img/')
+      cb(null, websiteImageSavingLocation)
     }
 
   }
