@@ -8,6 +8,8 @@ const helmet = require('helmet')
 var expressValidator = require('express-validator');
 const sanitizeBody = require('express-validator/filter');
 const passport = require('passport')
+var flash = require('connect-flash');
+
 const {
   port,
   sessionSecretKey,
@@ -21,7 +23,7 @@ var multer = require('multer')
 var cookieParser = require('cookie-parser')
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-     if (file.fieldname == "pro_images") {
+    if (file.fieldname == "pro_images") {
       console.log("working somehting");
       cb(null, productImageSavingLocation)
     } else {
@@ -43,13 +45,15 @@ const app = express();
 app.use(expressValidator());
 
 const {
-  dbname
+  dbname,
+  MONGODB_URL,
+  sessionKeys
 } = require('./config.js')
 //database connection
-mongoose.connect(`mongodb://localhost/${dbname}`, {
+mongoose.connect(MONGODB_URL,{
+  useMongoClient:true,
   useNewUrlParser: true
 });
-
 
 app.use(cookieParser());
 
@@ -62,6 +66,7 @@ app.use(session({
     maxAge: 600*1000
   }
 }))
+app.use(flash());
 
 app.set('port', (process.env.PORT || port));
 

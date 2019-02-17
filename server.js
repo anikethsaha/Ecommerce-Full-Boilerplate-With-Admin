@@ -16,6 +16,7 @@ var expressValidator = require('express-validator');
 const sanitizeBody = require('express-validator/filter');
 var cookieParser = require('cookie-parser')
 var flash = require('connect-flash');
+
 const {
   authRoutes,
   productRoutes,
@@ -34,9 +35,12 @@ const {
 // M
 // Middlewares
 
-const {dbname} = require('./configs/config.js')
+const {dbname,MONGODB_URL,sessionKeys} = require('./configs/config.js')
 //database connection
-mongoose.connect(`mongodb://localhost/${dbname}`);
+mongoose.connect(MONGODB_URL,{
+  useMongoClient:true,
+  useNewUrlParser: true
+});
 
 const app = express();
 app.use(helmet());
@@ -51,6 +55,10 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
 }));
+
+
+
+
   app.use(flash());
 
   // initialize passport

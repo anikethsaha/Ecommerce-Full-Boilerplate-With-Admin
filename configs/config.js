@@ -27,6 +27,9 @@ module.exports = {
     smtpService: "",
     // Encryption Constants
     algorithm:'', //'aes-256-ctr',
-    password: ''//'d6F3Efeq'
+    password: '',//'d6F3Efeq'
+    sessionKeys : ['key1','key2'],
+    MONGODB_URL  : '' //mongodb://localhost/${dbname}
+
 
 }
