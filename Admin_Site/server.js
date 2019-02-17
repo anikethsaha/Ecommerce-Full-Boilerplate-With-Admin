@@ -58,12 +58,23 @@ mongoose.connect(MONGODB_URL,{
 app.use(cookieParser());
 
 // session Middleware
+const {store} = require('./utils/sessionStorage/firebaseSessionStorage')
+/*
+OR IF YOU WANT TO USE OTHER SESSION STORAGE
+const { store} = require('./utils/sessionStorage/memorySessionStorage')
+*/
+
+
+
+// session Middleware
 app.use(session({
+  store,
   secret: sessionSecretKey,
   resave: true,
   saveUninitialized: true,
   cookie: {
-    maxAge: 600*1000
+    secure: process.env.NODE_ENV == "production" ? true : false ,
+    maxAge: 1000 * 60 * 60 * 24 * 7
   }
 }))
 app.use(flash());

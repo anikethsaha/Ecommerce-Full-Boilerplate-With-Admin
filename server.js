@@ -34,11 +34,15 @@ const {
 
 // M
 // Middlewares
-
+const { store} = require('./configs/sessionStorage/firebaseSessionStorage')
+/*
+OR IF YOU WANT TO USE OTHER SESSION STORAGE
+const { store} = require('./configs/sessionStorage/memorySessionStorage')
+*/
 const {dbname,MONGODB_URL,sessionKeys} = require('./configs/config.js')
 //database connection
 mongoose.connect(MONGODB_URL,{
-  useMongoClient:true,
+  // useMongoClient:true,
   useNewUrlParser: true
 });
 
@@ -49,14 +53,16 @@ app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}))
 app.use(bodyParser.json({limit: '50mb'}))
 
 app.use(cookieParser());
-
 app.use(session({
+  store,
   secret: sessionSecretKey,
   resave: true,
   saveUninitialized: true,
+  cookie: {
+    secure: process.env.NODE_ENV == "production" ? true : false ,
+    maxAge: 1000 * 60 * 60 * 24 * 7
+  }
 }));
-
-
 
 
   app.use(flash());
