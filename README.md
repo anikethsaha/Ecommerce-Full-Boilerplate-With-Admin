@@ -17,6 +17,35 @@
 ### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo
 
 ---
+## Features
+- [x] Authentication with OAuth
+- [x] Live Search
+- [x] Cart
+- [x] Checkout Item Changing
+- [x] Instant Buy 
+- [x] Payment with `razorpay`
+- [x] Live Chat using [tawk.io](https://www.tawk.to)
+- [x] Password reset using mail ( using nodemailer )
+- [x] Contact us form
+- [x] Categories With Subcategories 
+- [x] Dynamic Content
+- [x] Newsletter
+- [x] Admin Panel 
+
+
+---
+## technology
+- NodeJS - Server
+- ExpressJS - Nodejs framework
+- MongoDB - Database
+- HTML, CSS, JS, EJS - Frontend
+- PM2 - Clustering
+- Firebase - Firestore for Session Storage
+
+
+
+
+---
 ## Installation
 
 * Clone the repo
