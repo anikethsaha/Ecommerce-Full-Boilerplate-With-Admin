@@ -68,3 +68,16 @@
 Please go through the `configs` folder to edit the configuration , APIs and .env variables
 * `$ cd configs` for main site configs editing
 * `$ cd Admin_Site` and then in `config.js` change the values
+
+
+
+
+## LICENSE
+    
+MIT License
+
+Copyright (c) 2019 Aniketh Saha
+
+Use It As You Want :smiley:
+
+Refer for more info [LICENSE](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/blob/master/LICENSE)
