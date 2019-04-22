@@ -17,7 +17,7 @@
 ### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo
 
 ---
-## Features
+## FEATURES
 - [x] Authentication with OAuth
 - [x] Live Search
 - [x] Cart
@@ -34,7 +34,7 @@
 
 
 ---
-## technology
+## TECHNOLOGY
 - NodeJS - Server
 - ExpressJS - Nodejs framework
 - MongoDB - Database
@@ -46,7 +46,7 @@
 
 
 ---
-## Installation
+## INSTALLATION
 
 * Clone the repo
 * Check the `editing_Guide.txt` for editing refs
@@ -64,7 +64,7 @@
 * `$ npm run start` to run the server in production
 
 ---
-## Editing
+## EDITING
 Please go through the `configs` folder to edit the configuration , APIs and .env variables
 * `$ cd configs` for main site configs editing
 * `$ cd Admin_Site` and then in `config.js` change the values
