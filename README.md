@@ -49,7 +49,8 @@
 - [ ] Location Based Product Searching :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/2)
 - [ ] Tests
 - [ ] Recommendation System :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/4)
-
+- [ ] Admin Panel - analytics system for sales and visitors
+- [ ] Product Review Panel
 
 
 
