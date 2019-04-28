@@ -41,9 +41,16 @@
 - [x] Admin Panel 
 
 
+
+
+
 ---
 ## TODO
-- [ ] Location Based Product Searching [Issue-Ref](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/2)
+- [ ] Location Based Product Searching :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/2)
+- [ ] Tests
+- [ ] Recommendation System :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/4)
+
+
 
 
 
