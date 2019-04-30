@@ -16,7 +16,7 @@
     "cors": "^2.8.4",
     "csurf": "^1.9.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "express-controller": "^0.3.2",
     "express-limiter": "^1.6.1",
     "express-rate-limit": "^2.11.0",
