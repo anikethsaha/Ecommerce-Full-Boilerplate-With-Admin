@@ -20,7 +20,7 @@
     "express-controller": "^0.3.2",
     "express-limiter": "^1.6.1",
     "express-rate-limit": "^3.5.0",
-    "express-session": "^1.15.6",
+    "express-session": "^1.16.1",
     "express-validator": "^5.2.0",
     "hat": "0.0.3",
     "helmet": "^3.12.1",
