@@ -24,7 +24,7 @@
 ### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo . 
 ### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo
 
----
+
 ## FEATURES
 - [x] Authentication with OAuth
 - [x] Live Search
@@ -44,7 +44,7 @@
 
 
 
----
+
 ## TODO
 - [ ] Location Based Product Searching :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/2)
 - [ ] Tests
@@ -57,7 +57,7 @@
 
 
 
----
+
 ## TECHNOLOGY
 - NodeJS - Server
 - ExpressJS - Nodejs framework
@@ -69,7 +69,7 @@
 
 
 
----
+
 ## INSTALLATION
 
 * Clone the repo
@@ -87,7 +87,7 @@
 * `$ nodemon server` to run the server in local development 
 * `$ npm run start` to run the server in production
 
----
+
 ## EDITING
 Please go through the `configs` folder to edit the configuration , APIs and .env variables
 * `$ cd configs` for main site configs editing
