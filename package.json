@@ -39,7 +39,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "snyk": "^1.154.0"
+    "snyk": "^1.158.0"
   },
   "proxy": "localhost:8000/"
 }
