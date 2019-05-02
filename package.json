@@ -23,7 +23,7 @@
     "express-session": "^1.16.1",
     "express-validator": "^5.2.0",
     "hat": "0.0.3",
-    "helmet": "^3.12.1",
+    "helmet": "^3.16.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.5",
     "nodemailer": "^6.1.1",
