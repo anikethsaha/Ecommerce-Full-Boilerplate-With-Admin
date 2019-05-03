@@ -8,7 +8,7 @@
 
 [![Gitter](https://badges.gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community.svg)](https://gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 <p align="center">
