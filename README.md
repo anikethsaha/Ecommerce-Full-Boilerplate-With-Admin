@@ -2,13 +2,20 @@
   
   <img alt="efba logo" src="https://i.imgur.com/CS05H7T.png" width="150px" />
 </p>
-
 <h2 align="center">Ecommerce-Full-Boilerplate-With-Admin</h2>
+<p align="center">
+  <a href="https://gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+    <img alt="badgeprs" src="https://badges.gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community.svg" />
+  </a>
+  <a href="https://dependabot.com/">
+    <img alt="badgeprs" src="https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot" />
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="badgeprs" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a> 
+  <img alt="badgeprs" src="https://img.shields.io/badge/PRs-Welcome-green.svg" />
+</p>
 
-
-[![Gitter](https://badges.gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community.svg)](https://gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 <p align="center">
