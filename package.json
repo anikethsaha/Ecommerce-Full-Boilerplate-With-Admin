@@ -21,7 +21,7 @@
     "express-limiter": "^1.6.1",
     "express-rate-limit": "^3.5.0",
     "express-session": "^1.16.1",
-    "express-validator": "^5.2.0",
+    "express-validator": "^5.3.1",
     "hat": "0.0.3",
     "helmet": "^3.16.0",
     "jsonwebtoken": "^8.5.1",
