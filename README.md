@@ -38,7 +38,7 @@
 - [x] Cart
 - [x] Checkout Item Changing
 - [x] Instant Buy 
-- [x] Payment with `razorpay`
+- [x] Payment with [razorpay](https://razorpay.com/)
 - [x] Live Chat using [tawk.io](https://www.tawk.to)
 - [x] Password reset using mail ( using nodemailer )
 - [x] Contact us form
