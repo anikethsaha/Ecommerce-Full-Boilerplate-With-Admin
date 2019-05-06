@@ -99,7 +99,7 @@
 Please go through the `configs` folder to edit the configuration , APIs and .env variables
 * `$ cd configs` for main site configs editing
 * `$ cd Admin_Site` and then in `config.js` change the values
-
+* Refer [EDITING_GUIDE](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/blob/master/EDITING_GUIDE.md) for more editing details
 
 
 
