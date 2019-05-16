@@ -9,7 +9,7 @@
     "start:prod": "pm2-runtime start ecosystem.config.js --env production",
     "start:dev": "nodemon server.js",
     "lint": "eslint .",
-    "test": "npm run jest"
+    "test:ci": "npm run jest"
   },
   "author": "",
   "license": "MIT",
