@@ -1,9 +1,12 @@
 <p align="center">
-  
+
   <img alt="efba logo" src="https://i.imgur.com/CS05H7T.png" width="150px" />
 </p>
 <h2 align="center">Ecommerce-Full-Boilerplate-With-Admin</h2>
 <p align="center">
+   <a href="https://travis-ci.org/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/branches">
+    <img alt="badgeprs" src="https://travis-ci.org/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin.svg?branch=master" />
+  </a>
   <a href="https://gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
     <img alt="badgeprs" src="https://badges.gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community.svg" />
   </a>
@@ -12,7 +15,7 @@
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img alt="badgeprs" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a> 
+  </a>
   <img alt="badgeprs" src="https://img.shields.io/badge/PRs-Welcome-green.svg" />
 </p>
 
@@ -28,7 +31,7 @@
 > ## Still not stable for production
 
 
-### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo . 
+### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo .
 ### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo
 
 
@@ -37,15 +40,15 @@
 - [x] Live Search
 - [x] Cart
 - [x] Checkout Item Changing
-- [x] Instant Buy 
+- [x] Instant Buy
 - [x] Payment with [razorpay](https://razorpay.com/)
 - [x] Live Chat using [tawk.io](https://www.tawk.to)
 - [x] Password reset using mail ( using nodemailer )
 - [x] Contact us form
-- [x] Categories With Subcategories 
+- [x] Categories With Subcategories
 - [x] Dynamic Content
 - [x] Newsletter
-- [x] Admin Panel 
+- [x] Admin Panel
 
 
 
@@ -85,13 +88,13 @@
 
 ### For Main Ecommerce site
 * `$ npm i -g nodemon`
-* `$ nodemon server` to run the server in local development 
+* `$ nodemon server` to run the server in local development
 * `$ npm run start` to run the server in production
 
-### For Admin Site 
+### For Admin Site
 * `$ cd Admin_Site`
 * `$ npm i -g nodemon`
-* `$ nodemon server` to run the server in local development 
+* `$ nodemon server` to run the server in local development
 * `$ npm run start` to run the server in production
 
 
@@ -104,7 +107,7 @@ Please go through the `configs` folder to edit the configuration , APIs and .env
 
 
 ## LICENSE
-    
+
 MIT License
 
 Copyright (c) 2019 Aniketh Saha
