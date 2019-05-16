@@ -14,11 +14,11 @@ module.exports = {
     sessionSecretKey: bcrypt.hashSync("_SECRET_KEY_HERE_", 2),
     oauth,
     salt: "__salt__",
-    dbname: '_DBname_',
+    dbname: '_DBname_' ,
     stripeSecretKey: "",
     razorpay_key_id: "",
     razorpay_key_secret: "",
-    hostName: '',// use thise link for development in thie project 'http://localhost:8000',
+    hostName: '',// use this link for development in this project 'http://localhost:8000',
     // Mail Contents
     companyName: '',
     teamEmailAddress: "",
@@ -29,7 +29,7 @@ module.exports = {
     algorithm:'', //'aes-256-ctr',
     password: '',//'d6F3Efeq'
     sessionKeys : ['key1','key2'],
-    MONGODB_URL  : '' //mongodb://localhost/${dbname}
+    MONGODB_URL  : `mongodb://localhost/_DBname_` // Your mongodb url or mongoATLAS url will go here
 
 
 }
