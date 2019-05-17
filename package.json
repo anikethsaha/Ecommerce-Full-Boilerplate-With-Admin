@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "snyk": "snyk test",
-    "jest": "jest --forceExit ",
+    "jest": "jest  --detectOpenHandles",
     "start:prod": "pm2-runtime start ecosystem.config.js --env production",
     "start:dev": "nodemon server.js",
     "lint": "eslint .",
-    "test:ci": "npm run jest"
+    "test:ci": "jest --forceExit ",
+    "coveralls": "jest --coverage --forceExit && cat ./coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "MIT",
@@ -44,11 +45,17 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "snyk": "^1.165.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
     "jest": "^24.8.0",
-    "supertest": "^4.0.2",
     "nodemon": "^1.19.0",
-    "eslint": "^5.16.0"
+    "snyk": "^1.165.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "forceExit": true
   },
   "proxy": "localhost:8000/"
 }

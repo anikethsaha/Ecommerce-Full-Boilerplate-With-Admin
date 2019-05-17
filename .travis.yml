@@ -13,3 +13,5 @@ before_install:
 - npm update
 install:
 - npm install
+- npm run test:ci
+- npm run coverage
