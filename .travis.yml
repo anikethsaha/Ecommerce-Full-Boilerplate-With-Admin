@@ -14,4 +14,4 @@ before_install:
 install:
 - npm install
 - npm run test:ci
-- npm run coverage
+- npm run coveralls
