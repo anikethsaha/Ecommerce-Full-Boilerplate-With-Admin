@@ -133,7 +133,12 @@ Please go through the `configs` folder to edit the configuration , APIs and .env
 
 
 ## Road To Awesome Releases :newspaper:
-**Suggestions Are Welcome**
+[![Contribution](https://img.shields.io/badge/Contribution-Welcome-green.svg)](https://img.shields.io/badge/Contribution-Welcome-green.svg)
+[![Suggestion](https://img.shields.io/badge/Suggestions-Welcome-brightgreen.svg
+)](https://img.shields.io/badge/Suggestions-Welcome-brightgreen.svg
+)
+
+
 
 ### First Major - v1
 - To address all the issues with label `v1` **[Check Here](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues?q=is%3Aissue+is%3Aopen+label%3Av1)**
