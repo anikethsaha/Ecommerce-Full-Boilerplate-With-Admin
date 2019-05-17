@@ -2,7 +2,7 @@
 
   <img alt="efba logo" src="https://i.imgur.com/CS05H7T.png" width="150px" />
 </p>
-<h2 align="center">Ecommerce-Full-Boilerplate-With-Admin</h2>
+<h2 align="center">:zap: Ecommerce-Full-Boilerplate-With-Admin :zap:</h2>
 <p align="center">
    <a href="https://travis-ci.org/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/branches">
     <img alt="badgeprs" src="https://travis-ci.org/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin.svg?branch=master" />
@@ -28,14 +28,14 @@
 
 
 
-> ## Still not stable for production
+> ## Still not stable for production  :warning:
 
 
-### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo .
-### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo
+### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo .  :tv:
+### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo  :tv:
 
 
-## FEATURES
+## FEATURES :tada:
 - [x] Authentication with OAuth
 - [x] Live Search
 - [x] Cart
@@ -55,7 +55,7 @@
 
 
 
-## TODO
+## TODO :pencil:
 - [ ] Location Based Product Searching :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/2)
 - [ ] Tests
 - [ ] Recommendation System :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/4)
@@ -68,7 +68,7 @@
 
 
 
-## TECHNOLOGY
+## TECHNOLOGY :computer:
 - NodeJS - Server
 - ExpressJS - Nodejs framework
 - MongoDB - Database
@@ -80,7 +80,7 @@
 
 
 
-## INSTALLATION
+## INSTALLATION :hammer:
 
 * Clone the repo
 * Check the `editing_Guide.txt` for editing refs
@@ -98,7 +98,7 @@
 * `$ npm run start` to run the server in production
 
 
-## EDITING
+## EDITING :scissors:
 Please go through the `configs` folder to edit the configuration , APIs and .env variables
 * `$ cd configs` for main site configs editing
 * `$ cd Admin_Site` and then in `config.js` change the values
@@ -106,7 +106,30 @@ Please go through the `configs` folder to edit the configuration , APIs and .env
 
 
 
-## LICENSE
+## Road To Awesome Releases :newspaper:
+**Suggestions Are Welcome**
+
+### First Major - v1
+- To address all the issues with label `v1` **[Check Here](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues?q=is%3Aissue+is%3Aopen+label%3Av1)**
+- Tests for most of the modules
+- Better **Live Demo** [Issue#14](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/14)
+
+
+### v2
+- Better Docs
+- Recommendation System
+
+**Few more are there but quite not sure about them, will add it here if required**
+
+### v3
+- Migration to **Typescript**
+- Frontend in **React**
+- Query Using **Graphql**
+
+**More To Come**
+
+
+## LICENSE :bookmark:
 
 MIT License
 
