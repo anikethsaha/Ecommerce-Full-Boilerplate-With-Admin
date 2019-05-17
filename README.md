@@ -30,9 +30,27 @@
 
 > ## Still not stable for production  :warning:
 
+## Contents
+- [Live Demo](#live-demo-tv)
+- [Features](#features-tada)
+- [Todo(s)](#todo-pencil)
+- [Installation](#installation-hammer)
+  - [For Main Ecommerce site](#for-main-ecommerce-site)
+  - [For Admin Site](#for-admin-site)
+- [Editing](#editing-scissors)
+- [Road To Awesome Releases](#road-to-awesome-releases-newspaper)
+- [LICENSE](#license-bookmark)
 
-### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo .  :tv:
-### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo  :tv:
+
+
+
+
+
+
+
+## Live Demo :tv:
+#### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo . 
+#### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo 
 
 
 ## FEATURES :tada:
@@ -98,11 +116,20 @@
 * `$ npm run start` to run the server in production
 
 
+
+
+
+
+
 ## EDITING :scissors:
 Please go through the `configs` folder to edit the configuration , APIs and .env variables
 * `$ cd configs` for main site configs editing
 * `$ cd Admin_Site` and then in `config.js` change the values
 * Refer [EDITING_GUIDE](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/blob/master/EDITING_GUIDE.md) for more editing details
+
+
+
+
 
 
 
@@ -127,6 +154,10 @@ Please go through the `configs` folder to edit the configuration , APIs and .env
 - Query Using **Graphql**
 
 **More To Come**
+
+
+
+
 
 
 ## LICENSE :bookmark:
