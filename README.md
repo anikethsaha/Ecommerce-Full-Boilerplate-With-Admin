@@ -7,6 +7,8 @@
    <a href="https://travis-ci.org/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/branches">
     <img alt="badgeprs" src="https://travis-ci.org/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin.svg?branch=master" />
   </a>
+  <a href='https://coveralls.io/github/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin?branch=master'><img src='https://coveralls.io/repos/github/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/badge.svg?branch=master' alt='Coverage Status' /></a>
+
   <a href="https://gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
     <img alt="badgeprs" src="https://badges.gitter.im/Ecommerce-Full-Boilerplate-With-Admin/community.svg" />
   </a>
