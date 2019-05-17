@@ -1,18 +1,35 @@
 /* eslint-disable no-undef */
 const request = require('supertest')
-const app = require('../server')
+const mongoose = require('mongoose');
+
+const {
+  MONGODB_URL
+} = require('../configs/config.js')
 
 
-// console.log('app', app)
 
-describe('GET /', () => {
-  it("should return status 200",() => {
-    return request(app).get('/').expect(200)
-  },500)
+
+beforeAll(async () => {
+  await mongoose.connect(MONGODB_URL, {
+    useNewUrlParser: true
+  });
+  console.log('mongoose.connection.readyState', mongoose.connection.readyState)
+})
+
+
+
+
+
+describe('MongoDB Connection Checking',() => {
+  it("should be 1 or 2",(done) => {
+    expect(mongoose.connection.readyState).toBe(1)
+   done()
+  })
 })
 
 
 
 afterAll((done) => {
+
   done()
 })
