@@ -76,9 +76,8 @@
 ## TODO :pencil:
 - [ ] Location Based Product Searching :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/2)
 - [ ] Tests
-- [ ] Recommendation System :  [Discussion](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/4)
-- [ ] Admin Panel - analytics system for sales and visitors
-- [ ] Product Review Panel
+- [ ] Admin Panel - analytics system for sales and visitors [issue#6](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/6) 
+- [ ] Product Review Panel [issue#5](https://github.com/anikethsaha/Ecommerce-Full-Boilerplate-With-Admin/issues/5)
 
 
 
