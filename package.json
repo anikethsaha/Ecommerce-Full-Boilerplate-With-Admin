@@ -21,7 +21,7 @@
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "csurf": "^1.10.0",
-    "ejs": "^2.6.1",
+    "ejs": "^2.7.1",
     "express": "^4.17.0",
     "express-controller": "^0.3.2",
     "express-limiter": "^1.6.1",
