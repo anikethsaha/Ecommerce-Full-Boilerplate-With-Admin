@@ -39,7 +39,7 @@
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
-    "pm2": "^3.2.9",
+    "pm2": "^4.2.3",
     "razorpay": "^2.0.4",
     "stripe": "^6.36.0",
     "winston": "^3.2.1"
