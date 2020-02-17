@@ -32,6 +32,10 @@
 
 > ## Still not stable for production  :warning:
 
+> I am not open for any paid support for this project as it recommended by some. If you need any help with this project please submit an issue with mentioning me (as I am not watching this repo) in it. Thanks
+
+> If you want to help supporting and maintaining this project. Please mail me at `anik220798@gmail.com` 
+
 ## Contents
 - [Live Demo](#live-demo-tv)
 - [Features](#features-tada)
