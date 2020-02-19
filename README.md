@@ -36,6 +36,11 @@
 
 > If you want to help supporting and maintaining this project. Please mail me at `anik220798@gmail.com` 
 
+
+## Donation
+
+<a href="https://www.buymeacoffee.com/eydPs6n" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
 ## Contents
 - [Live Demo](#live-demo-tv)
 - [Features](#features-tada)
