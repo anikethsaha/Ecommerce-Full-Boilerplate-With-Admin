@@ -114,7 +114,7 @@
 * Check the `editing_Guide.txt` for editing refs
 * `$ npm install`
 
-### For Main Ecommerce site
+### Main Ecommerce site For Android Users
 * `$ npm i -g nodemon`
 * `$ nodemon server` to run the server in local development
 * `$ npm run start` to run the server in production
