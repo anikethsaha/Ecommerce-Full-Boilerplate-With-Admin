@@ -42,15 +42,15 @@
 <a href="https://www.buymeacoffee.com/eydPs6n" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
 ## Contents
-- [Live Demo](#live-demo-tv)
-- [Features](#features-tada)
-- [Todo(s)](#todo-pencil)
-- [Installation](#installation-hammer)
-  - [For Main Ecommerce site](#for-main-ecommerce-site)
-  - [For Admin Site](#for-admin-site)
-- [Editing](#editing-scissors)
-- [Road To Awesome Releases](#road-to-awesome-releases-newspaper)
-- [LICENSE](#license-bookmark)
+- [Live Demo]@(#live-demo-tv)
+- [Features]@(#features-tada)
+- [Todo(s)]@(#todo-pencil)
+- [Installation]@(#installation-hammer)
+  - [For Main Ecommerce site]@(#for-main-ecommerce-site)
+  - [For Admin Site]@(#for-admin-site)
+- [Editing]@(#editing-scissors)
+- [Road To Awesome Releases]@(#road-to-awesome-releases-newspaper)
+- [LICENSE]@(#license-bookmark)
 
 
 
@@ -60,8 +60,8 @@
 
 
 ## Live Demo :tv:
-#### Click [here](https://gentle-eyrie-53138.herokuapp.com/) to see live demo . 
-#### Click [here](https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo 
+#### Click here(https://gentle-eyrie-53138.herokuapp.com/) to see live demo . 
+#### Click here(https://immense-refuge-43321.herokuapp.com/login) to see the admin site live demo 
 
 
 ## FEATURES :tada:
@@ -110,7 +110,7 @@
 
 ## INSTALLATION :hammer:
 
-* Clone the repo
+* Clone the repository
 * Check the `editing_Guide.txt` for editing refs
 * `$ npm install`
 
